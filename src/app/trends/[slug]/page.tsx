@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { blogPosts } from '@/lib/data';
+import { trends } from '@/lib/data';
 import { getPlaceholderImage } from '@/lib/placeholder-images';
 import { notFound } from 'next/navigation';
 import { Calendar, User } from 'lucide-react';
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const post = trends.find((p) => p.slug === params.slug);
 
   if (!post) {
     return {
@@ -19,19 +19,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${post.title} | Dorset Creative Hub Blog`,
+    title: `${post.title} | Dorset Creative Hub Trends`,
     description: post.excerpt,
   };
 }
 
 export function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  return trends.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export default function TrendPostPage({ params }: Props) {
+  const post = trends.find((p) => p.slug === params.slug);
 
   if (!post) {
     notFound();

@@ -20,7 +20,7 @@ const Footer = () => {
               <li><Link href="/about" className="text-sm hover:text-primary">About Us</Link></li>
               <li><Link href="/services" className="text-sm hover:text-primary">Services</Link></li>
               <li><Link href="/portfolio" className="text-sm hover:text-primary">Portfolio</Link></li>
-              <li><Link href="/blog" className="text-sm hover:text-primary">Blog</Link></li>
+              <li><Link href="/trends" className="text-sm hover:text-primary">Trends</Link></li>
               <li><Link href="/contact" className="text-sm hover:text-primary">Contact</Link></li>
             </ul>
           </div>

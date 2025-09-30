@@ -24,7 +24,7 @@ export type Testimonial = {
   quote: string;
 };
 
-export type BlogPost = {
+export type Trend = {
   slug: string;
   title: string;
   author: string;

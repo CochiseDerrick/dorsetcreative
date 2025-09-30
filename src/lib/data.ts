@@ -1,5 +1,5 @@
 
-import type { Project, Service, BlogPost, TeamMember, Testimonial } from './types';
+import type { Project, Service, Trend, TeamMember, Testimonial } from './types';
 
 export const services: Service[] = [
   {
@@ -54,35 +54,7 @@ export const testimonials: Testimonial[] = [
   { name: 'Ethan Davis', company: 'Startup Hub', quote: 'Their expertise in both design and development was a huge asset. They are a true partner.' },
 ];
 
-export const blogPosts: BlogPost[] = [
-  {
-    slug: 'the-future-of-web-design-2024-trends',
-    title: 'The Future of Web Design: 2024 Trends',
-    author: 'Jane Doe',
-    date: '2024-05-15',
-    imageId: 'blog-post-1',
-    excerpt: 'Explore the latest trends shaping the future of web design, from AI integration to immersive 3D experiences...',
-    content: 'The web is in a constant state of evolution, and 2024 is no exception. This year, we\'re seeing a convergence of technology and creativity that is pushing the boundaries of what\'s possible online. Key trends include the rise of AI-driven design tools that assist with layout and content generation, the increasing popularity of bento grids for organizing information, and a move towards more dynamic, animated interfaces that captivate users. Another significant trend is the adoption of immersive 3D elements and WebGL, which create engaging and interactive experiences that were once the exclusive domain of video games. As designers, we must embrace these new tools and techniques to create websites that are not only visually stunning but also highly functional and user-friendly.'
-  },
-  {
-    slug: 'react-vs-vue-which-framework-is-right-for-you',
-    title: 'React vs. Vue: Which Framework is Right for You?',
-    author: 'John Smith',
-    date: '2024-04-22',
-    imageId: 'blog-post-2',
-    excerpt: 'A deep dive into the pros and cons of React and Vue to help you choose the best framework for your next project...',
-    content: 'Choosing the right JavaScript framework is a critical decision for any web development project. React, backed by Facebook, boasts a massive ecosystem, a component-based architecture, and a "learn once, write anywhere" philosophy. Its virtual DOM provides excellent performance, and its popularity means a wealth of resources and community support. On the other hand, Vue, often described as a more progressive framework, is known for its gentle learning curve, excellent documentation, and elegant syntax. Its two-way data binding and flexible structure make it a favorite for developers who appreciate simplicity and performance. Ultimately, the choice depends on your team\'s expertise, project requirements, and long-term goals. Both are powerful tools capable of building modern, scalable web applications.'
-  },
-  {
-    slug: 'mastering-seo-a-beginners-guide',
-    title: 'Mastering SEO: A Beginner\'s Guide',
-    author: 'Alex Johnson',
-    date: '2024-03-10',
-    imageId: 'blog-post-3',
-    excerpt: 'Unlock the secrets of search engine optimization and learn how to drive organic traffic to your website...',
-    content: 'Search Engine Optimization (SEO) is the art and science of getting pages to rank higher in search engines like Google. For beginners, it can seem daunting, but it boils down to a few core principles. First is on-page SEO, which involves optimizing your content and HTML source code. This includes using relevant keywords, writing compelling meta descriptions, and ensuring your site has a logical structure. Second is off-page SEO, which focuses on building authority through backlinks from other reputable websites. Finally, technical SEO ensures that search engines can crawl and index your site effectively. This involves optimizing site speed, ensuring mobile-friendliness, and using structured data. By focusing on these areas and consistently creating high-quality content, you can significantly improve your website\'s visibility and attract more organic traffic.'
-  },
-];
+export const trends: Trend[] = [];
 
 export const teamMembers: TeamMember[] = [
   { name: 'Jane Doe', role: 'Lead Designer', imageId: 'team-member-1', bio: 'With over a decade of experience, Jane is the creative force behind our most iconic designs. She has a passion for typography and minimalist aesthetics.' },

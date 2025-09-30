@@ -58,7 +58,7 @@ export const trends: Trend[] = [
   {
     slug: 'asymmetrical-layouts-in-web-design',
     title: 'The Rise of Asymmetrical Layouts in Web Design',
-    author: 'Jane Doe',
+    author: 'Elena Vance',
     date: '2024-07-28T10:00:00.000Z',
     imageId: 'trend-post-1',
     excerpt: 'Move over, grids! Asymmetrical layouts are bringing a new level of dynamism and visual interest to web design. Discover how breaking the balance can create a more engaging user experience.',
@@ -67,7 +67,7 @@ export const trends: Trend[] = [
   {
     slug: 'broken-grid-and-overlapping-elements',
     title: 'Breaking the Grid: A Look at Overlapping Elements',
-    author: 'John Smith',
+    author: 'Marcus Finch',
     date: '2024-07-25T14:30:00.000Z',
     imageId: 'trend-post-2',
     excerpt: 'Designers are pushing boundaries by breaking free from rigid grid structures and using overlapping elements to add depth and a sense of tangibility to their websites.',
@@ -76,20 +76,45 @@ export const trends: Trend[] = [
   {
     slug: 'interactive-and-animated-interfaces',
     title: 'Beyond Static: The Power of Interactive and Animated Interfaces',
-    author: 'Alex Johnson',
+    author: 'Liam Chen',
     date: '2024-07-22T09:00:00.000Z',
     imageId: 'trend-post-3',
     excerpt: 'From subtle micro-interactions to full-blown animations, interactive elements are transforming websites from static pages into dynamic experiences that delight and engage users.',
     content: 'Interactivity is no longer just a bonus feature; it\'s becoming a core component of modern web design. Micro-interactions, such as button hover effects or animated form inputs, provide immediate feedback and make an interface feel more responsive and intuitive. Larger-scale animations and page transitions can guide users through a narrative, tell a story, and create a "wow" factor. These dynamic elements, when used thoughtfully, improve usability by providing cues and context. They can also significantly enhance brand personality, making a website more enjoyable and memorable. The key is to ensure animations are purposeful and enhance the user experience, rather than distracting from it.'
+  },
+  {
+    slug: 'minimalism-and-white-space',
+    title: 'Minimalism and White Space: The Art of Less is More in Layouts',
+    author: 'Elena Vance',
+    date: '2024-07-20T11:00:00.000Z',
+    imageId: 'trend-post-4',
+    excerpt: 'Discover how strategic use of white space and minimalist principles can lead to cleaner, more focused, and elegant app and website layouts that improve user comprehension.',
+    content: 'Minimalism in web and app design is not just about removing elements; it\'s a deliberate strategy to prioritize content and functionality. By embracing white space (or negative space), designers can reduce clutter, improve legibility, and create a calming, focused user experience. A minimalist layout guides the user\'s attention directly to the most important content and actions, such as a call-to-action button or a key piece of information. This approach leads to designs that are not only aesthetically pleasing and timeless but also perform better by making interfaces more intuitive and easier to navigate. The "less is more" philosophy is a powerful tool for creating elegant and user-friendly digital products.'
+  },
+  {
+    slug: 'dark-mode-ui-layouts',
+    title: 'Dark Mode: A New Standard in UI Layout Design',
+    author: 'Marcus Finch',
+    date: '2024-07-18T16:00:00.000Z',
+    imageId: 'trend-post-5',
+    excerpt: 'Dark mode has moved from a niche feature to a user expectation. We explore the layout considerations for designing effective, readable, and visually stunning dark UIs.',
+    content: 'Dark mode is more than just an inverted color scheme; it requires a different approach to layout and visual hierarchy. In a dark UI, contrast, typography, and depth play crucial roles. Designers must carefully manage light and shadow to create separation between elements and guide the user. Because bright colors can cause eye strain against a dark background, a more subdued and limited color palette is often more effective. Spacing and layout become even more critical to prevent a design from feeling crowded. When done right, a dark mode layout can reduce eye strain in low-light conditions, save battery life on OLED screens, and provide a sleek, modern aesthetic that many users now prefer.'
+  },
+  {
+    slug: 'single-page-vs-multi-page-layouts',
+    title: 'SPA vs. Multi-Page: Choosing the Right Application Layout',
+    author: 'Liam Chen',
+    date: '2024-07-15T08:00:00.000Z',
+    imageId: 'trend-post-6',
+    excerpt: 'The architecture of your application layout—Single-Page Application (SPA) or Multi-Page Application (MPA)—has a huge impact on user experience. Which one is right for your project?',
+    content: 'Choosing between a Single-Page Application (SPA) and a Multi-Page Application (MPA) is a fundamental layout decision. SPAs load a single HTML page and dynamically update content, offering a fast, fluid, app-like experience. They are great for complex applications with a lot of user interaction, like dashboards or social networks. MPAs, the traditional web model, reload the entire page with each new request. This approach is often better for SEO and is well-suited for content-heavy sites like e-commerce stores or blogs where each page needs to be indexable. The choice depends on the project\'s goals: a rich, interactive experience might favor an SPA, while a broad, content-focused site might be better as an MPA.'
   }
 ];
 
 
 export const teamMembers: TeamMember[] = [
-  { name: 'Jane Doe', role: 'Lead Designer', imageId: 'team-member-1', bio: 'With over a decade of experience, Jane is the creative force behind our most iconic designs. She has a passion for typography and minimalist aesthetics.' },
-  { name: 'John Smith', role: 'Lead Developer', imageId: 'team-member-2', bio: 'John is a full-stack wizard who can turn any design into a high-performance application. He specializes in React and Node.js.' },
-  { name: 'Alex Johnson', role: 'SEO Strategist', imageId: 'team-member-3', bio: 'Alex lives and breathes data. His analytical approach to SEO helps our clients dominate search rankings and drive organic growth.' },
-  { name: 'Sarah Lee', role: 'Project Manager', imageId: 'team-member-4', bio: 'Sarah ensures every project runs smoothly from start to finish. Her organizational skills and clear communication are key to our success.' },
+  { name: 'Elena Vance', role: 'Creative Director', imageId: 'team-member-1', bio: 'With a keen eye for aesthetics and a decade of leadership, Elena guides our creative vision, ensuring every project is a masterpiece of design and strategy.' },
+  { name: 'Marcus Finch', role: 'Technical Lead', imageId: 'team-member-2', bio: 'Marcus is a master of code and architecture. He leads our development team in building robust, scalable, and cutting-edge digital solutions.' },
+  { name: 'Liam Chen', role: 'Head of Digital Strategy', imageId: 'team-member-3', bio: 'Liam combines data-driven insights with market expertise to craft SEO and content strategies that deliver measurable results and drive organic growth.' },
+  { name: 'Isabelle Rossi', role: 'Lead Project Manager', imageId: 'team-member-4', bio: 'Isabelle is the organizational heart of our agency. She orchestrates every project with precision, ensuring we deliver on time, on budget, and beyond expectations.' },
 ];
-
-    

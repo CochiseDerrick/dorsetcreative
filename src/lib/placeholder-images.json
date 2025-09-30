@@ -61,26 +61,44 @@
       "imageHint": "seo analytics"
     },
     {
+      "id": "trend-post-4",
+      "description": "Image for minimalism and white space article",
+      "imageUrl": "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwZGVza3xlbnwwfHx8fDE3MjE4MTQwNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "minimalist desk"
+    },
+    {
+      "id": "trend-post-5",
+      "description": "Image for dark mode UI article",
+      "imageUrl": "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkYXJrJTIwbW9kZSUyMFVJdGVufDB8fHx8MTcyMTgxNDExNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dark mode UI"
+    },
+    {
+      "id": "trend-post-6",
+      "description": "Image for single page vs multi page article",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBhcHBsaWNhdGlvbnxlbnwwfHx8fDE3MjE4MTQxNTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web application"
+    },
+    {
       "id": "team-member-1",
-      "description": "Profile picture of Jane Doe",
+      "description": "Profile picture of a female creative director",
       "imageUrl": "https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyNDQ1MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional portrait"
     },
     {
       "id": "team-member-2",
-      "description": "Profile picture of John Smith",
+      "description": "Profile picture of a male technical lead",
       "imageUrl": "https://images.unsplash.com/photo-1544168190-79c17527004f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU5MjQ0NTE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional portrait"
     },
     {
       "id": "team-member-3",
-      "description": "Profile picture of Alex Johnson",
+      "description": "Profile picture of a male digital strategist",
       "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyNDQ1MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional portrait"
     },
     {
       "id": "team-member-4",
-      "description": "Profile picture of Sarah Lee",
+      "description": "Profile picture of a female project manager",
       "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyNDQ1MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional portrait"
     }

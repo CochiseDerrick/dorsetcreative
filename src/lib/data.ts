@@ -19,7 +19,7 @@ export const services: Service[] = [
     longDescription: 'We specialize in native and cross-platform mobile app development. Our team guides you through the entire lifecycle, from initial strategy and market research to UI/UX design, development, testing, and App Store submission. We build scalable, secure, and high-performance applications that provide a rich user experience and help you achieve your business objectives.',
     pricingTiers: [
       { name: 'MVP', price: '£8,000', features: ['iOS or Android', 'Core Features', 'UI/UX Design', 'App Store Submission'] },
-      { name: 'Full-Featured', price: '£20,000', features: ['iOS & Android', 'Advanced Features', 'Backend API', 'Analytics'] },
+      { name: 'Full-Featured', price: '£20,000', features: ['Web, iOS & Android', 'Advanced Features', 'Backend API', 'Analytics'] },
       { name: 'Enterprise', price: 'Contact Us', features: ['Custom Architecture', 'Third-party Integrations', 'Ongoing Maintenance', 'Dedicated Team'] },
     ]
   },

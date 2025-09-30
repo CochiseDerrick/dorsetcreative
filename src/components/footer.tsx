@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo />
             <p className="text-sm text-muted-foreground">
-              Crafting Digital Excellence for the Modern Web.
+              Growth, Creativity, Connection.
             </p>
           </div>
           <div>

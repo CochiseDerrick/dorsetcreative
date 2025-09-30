@@ -1,4 +1,4 @@
-import { Users, Eye, Zap } from 'lucide-react';
+import { Users, Lightbulb, TrendingUp } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function AboutPage() {
             About Dorset Creative Hub
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            We are a passionate team of designers, developers, and strategists dedicated to building exceptional digital experiences.
+            We are a passionate team of designers, developers, and strategists dedicated to fostering growth, creativity, and connection through exceptional digital experiences.
           </p>
         </div>
       </header>
@@ -24,24 +24,24 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="space-y-4">
-              <Eye className="mx-auto h-12 w-12 text-primary" />
-              <h2 className="text-2xl font-bold">Our Mission</h2>
+              <TrendingUp className="mx-auto h-12 w-12 text-primary" />
+              <h2 className="text-2xl font-bold">Growth</h2>
               <p className="text-muted-foreground">
-                To empower businesses by creating beautiful, functional, and impactful digital solutions that drive growth and deliver measurable results.
+                We empower businesses by creating impactful digital solutions that drive sustainable growth and deliver measurable results.
               </p>
             </div>
             <div className="space-y-4">
-              <Zap className="mx-auto h-12 w-12 text-primary" />
-              <h2 className="text-2xl font-bold">Our Values</h2>
+              <Lightbulb className="mx-auto h-12 w-12 text-primary" />
+              <h2 className="text-2xl font-bold">Creativity</h2>
               <p className="text-muted-foreground">
-                We believe in collaboration, innovation, and integrity. We are committed to transparency and building long-lasting partnerships with our clients.
+                We believe in the power of creative thinking and innovation to build beautiful and functional products that users love.
               </p>
             </div>
             <div className="space-y-4">
               <Users className="mx-auto h-12 w-12 text-primary" />
-              <h2 className="text-2xl font-bold">Our Approach</h2>
+              <h2 className="text-2xl font-bold">Connection</h2>
               <p className="text-muted-foreground">
-                Our process is data-driven and user-centric. We combine creative thinking with strategic analysis to deliver products that users love and businesses need.
+                Our process is collaborative and user-centric. We build long-lasting partnerships with our clients to create meaningful connections with their audiences.
               </p>
             </div>
           </div>

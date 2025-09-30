@@ -7,7 +7,7 @@ import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
   title: 'Dorset Creative Hub',
-  description: 'Crafting Digital Excellence | Web & App Development',
+  description: 'Growth, Creativity, Connection | Web & App Development',
 };
 
 export default function RootLayout({

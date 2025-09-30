@@ -50,7 +50,7 @@ export default function Home() {
               Crafting Digital Excellence
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90">
-              Innovative web design, powerful app development, and strategic SEO to elevate your brand.
+              Growth, Creativity, and Connection.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">

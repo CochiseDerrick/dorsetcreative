@@ -1,3 +1,4 @@
+
 import type { Project, Service, BlogPost, TeamMember, Testimonial } from './types';
 
 export const services: Service[] = [
@@ -18,7 +19,7 @@ export const services: Service[] = [
     description: 'From concept to launch, we build intuitive and powerful mobile applications for iOS and Android that engage users and drive growth.',
     longDescription: 'We specialize in native and cross-platform mobile app development. Our team guides you through the entire lifecycle, from initial strategy and market research to UI/UX design, development, testing, and App Store submission. We build scalable, secure, and high-performance applications that provide a rich user experience and help you achieve your business objectives.',
     pricingTiers: [
-      { name: 'MVP', price: '£8,000', features: ['iOS or Android', 'Core Features', 'UI/UX Design', 'App Store Submission'] },
+      { name: 'MVP', price: '£8,000', features: ['Web, iOS & Android', 'Core Features', 'UI/UX Design', 'App Store Submission'] },
       { name: 'Full-Featured', price: '£20,000', features: ['Web, iOS & Android', 'Advanced Features', 'Backend API', 'Analytics'] },
       { name: 'Enterprise', price: 'Contact Us', features: ['Custom Architecture', 'Third-party Integrations', 'Ongoing Maintenance', 'Dedicated Team'] },
     ]
@@ -89,3 +90,5 @@ export const teamMembers: TeamMember[] = [
   { name: 'Alex Johnson', role: 'SEO Strategist', imageId: 'team-member-3', bio: 'Alex lives and breathes data. His analytical approach to SEO helps our clients dominate search rankings and drive organic growth.' },
   { name: 'Sarah Lee', role: 'Project Manager', imageId: 'team-member-4', bio: 'Sarah ensures every project runs smoothly from start to finish. Her organizational skills and clear communication are key to our success.' },
 ];
+
+    

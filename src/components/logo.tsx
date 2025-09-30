@@ -12,9 +12,9 @@ const Logo = ({ className }: { className?: string }) => {
         className="text-primary"
       >
         <rect width="32" height="32" rx="8" fill="currentColor"/>
-        <path d="M16 8V24M16 24C19.3137 24 22 21.3137 22 18C22 14.6863 19.3137 12 16 12C12.6863 12 10 14.6863 10 18C10 21.3137 12.6863 24 16 24Z" stroke="hsl(var(--primary-foreground))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M13 15L11 13" stroke="hsl(var(--primary-foreground))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M19 15L21 13" stroke="hsl(var(--primary-foreground))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M10 9V23" stroke="hsl(var(--primary-foreground))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M10 9C15.5228 9 20 13.4772 20 19V23" stroke="hsl(var(--primary-foreground))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M22 9C16.4772 9 12 13.4772 12 19V23" stroke="hsl(var(--primary-foreground))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
       <span className="text-xl font-bold">Dorset Creative</span>
     </div>

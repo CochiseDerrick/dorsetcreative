@@ -9,7 +9,7 @@
     {
       "id": "portfolio-1",
       "description": "E-commerce platform",
-      "imageUrl": "https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWJzaXRlJTIwZGVzaWdufGVufDB8fHx8MTc1OTE1ODA0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWJzaXRlJTIwZGVzaWdufGVufDB8fHx8fDE3NTkxNTgwNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "website design"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "portfolio-4",
       "description": "Corporate website redesign",
-      "imageUrl": "https://images.unsplash.com/photo-1633365087123-b3f2c305769a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb3Jwb3JhdGUlMjB3ZWJzaXRlfGVufDB8fHx8MTc1OTI0OTE0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1633365087123-b3f2c305769a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb3Jwb3JhdGUlMjB3ZWJzaXRlfGVufDB8fHx8fDE3NTkyNDkxNDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "corporate website"
     },
     {
@@ -51,13 +51,13 @@
     {
       "id": "trend-post-2",
       "description": "Blog post about React vs Vue",
-      "imageUrl": "https://images.unsplash.com/photo-1753998943413-8cba1b923c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb2RlJTIwZWRpdG9yfGVufDB8fHx8MTc1OTE1MTk0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1753998943413-8cba1b923c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb2RlJTIwZWRpdG9yfGVufDB8fHx8fDE3NTkxNTgxOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "code editor"
     },
     {
       "id": "trend-post-3",
       "description": "Blog post about SEO strategies",
-      "imageUrl": "https://images.unsplash.com/photo-1738687221127-fe4d606cfcd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2VvJTIwYW5hbHl0aWNzfGVufDB8fHx8MTc1OTI1MzEyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1738687221127-fe4d606cfcd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2VvJTIwYW5hbHl0aWNzfGVufDB8fHx8fDE3NTkyNTMxMjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "seo analytics"
     },
     {
@@ -77,30 +77,6 @@
       "description": "Image for single page vs multi page article",
       "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBhcHBsaWNhdGlvbnxlbnwwfHx8fDE3MjE4MTQxNTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "web application"
-    },
-    {
-      "id": "team-member-1",
-      "description": "Profile picture of a female creative director",
-      "imageUrl": "https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyNDQ1MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional portrait"
-    },
-    {
-      "id": "team-member-2",
-      "description": "Profile picture of a male technical lead",
-      "imageUrl": "https://images.unsplash.com/photo-1544168190-79c17527004f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU5MjQ0NTE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional portrait"
-    },
-    {
-      "id": "team-member-3",
-      "description": "Profile picture of a male digital strategist",
-      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyNDQ1MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional portrait"
-    },
-    {
-      "id": "team-member-4",
-      "description": "Profile picture of a female project manager",
-      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyNDQ1MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional portrait"
     }
   ]
 }

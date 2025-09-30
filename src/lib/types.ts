@@ -33,10 +33,3 @@ export type Trend = {
   excerpt: string;
   content: string;
 };
-
-export type TeamMember = {
-  name: string;
-  role: string;
-  imageId: string;
-  bio: string;
-};

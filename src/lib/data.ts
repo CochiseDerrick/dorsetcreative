@@ -1,5 +1,5 @@
 
-import type { Project, Service, Trend, TeamMember, Testimonial } from './types';
+import type { Project, Service, Trend, Testimonial } from './types';
 
 export const services: Service[] = [
   {
@@ -109,12 +109,4 @@ export const trends: Trend[] = [
     excerpt: 'The architecture of your application layout—Single-Page Application (SPA) or Multi-Page Application (MPA)—has a huge impact on user experience. Which one is right for your project?',
     content: 'Choosing between a Single-Page Application (SPA) and a Multi-Page Application (MPA) is a fundamental layout decision. SPAs load a single HTML page and dynamically update content, offering a fast, fluid, app-like experience. They are great for complex applications with a lot of user interaction, like dashboards or social networks. MPAs, the traditional web model, reload the entire page with each new request. This approach is often better for SEO and is well-suited for content-heavy sites like e-commerce stores or blogs where each page needs to be indexable. The choice depends on the project\'s goals: a rich, interactive experience might favor an SPA, while a broad, content-focused site might be better as an MPA.'
   }
-];
-
-
-export const teamMembers: TeamMember[] = [
-  { name: 'Elena Vance', role: 'Creative Director', imageId: 'team-member-1', bio: 'With a keen eye for aesthetics and a decade of leadership, Elena guides our creative vision, ensuring every project is a masterpiece of design and strategy.' },
-  { name: 'Marcus Finch', role: 'Technical Lead', imageId: 'team-member-2', bio: 'Marcus is a master of code and architecture. He leads our development team in building robust, scalable, and cutting-edge digital solutions.' },
-  { name: 'Liam Chen', role: 'Head of Digital Strategy', imageId: 'team-member-3', bio: 'Liam combines data-driven insights with market expertise to craft SEO and content strategies that deliver measurable results and drive organic growth.' },
-  { name: 'Isabelle Rossi', role: 'Lead Project Manager', imageId: 'team-member-4', bio: 'Isabelle is the organizational heart of our agency. She orchestrates every project with precision, ensuring we deliver on time, on budget, and beyond expectations.' },
 ];

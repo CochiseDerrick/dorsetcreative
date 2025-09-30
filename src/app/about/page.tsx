@@ -1,14 +1,4 @@
-import Image from 'next/image';
 import { Users, Eye, Zap } from 'lucide-react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { teamMembers } from '@/lib/data';
-import { getPlaceholderImage } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -54,42 +44,6 @@ export default function AboutPage() {
                 Our process is data-driven and user-centric. We combine creative thinking with strategic analysis to deliver products that users love and businesses need.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Meet the Team</h2>
-            <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
-              The creative minds behind our success.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member) => {
-              const memberImage = getPlaceholderImage(member.imageId);
-              return (
-                <Card key={member.name} className="text-center">
-                  <CardHeader>
-                    <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden">
-                      <Image
-                        src={memberImage.imageUrl}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={memberImage.imageHint}
-                      />
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardTitle className="text-xl font-semibold">{member.name}</CardTitle>
-                    <CardDescription className="text-primary">{member.role}</CardDescription>
-                    <p className="mt-4 text-sm text-muted-foreground">{member.bio}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
           </div>
         </div>
       </section>

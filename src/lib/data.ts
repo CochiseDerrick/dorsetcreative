@@ -54,7 +54,36 @@ export const testimonials: Testimonial[] = [
   { name: 'Ethan Davis', company: 'Startup Hub', quote: 'Their expertise in both design and development was a huge asset. They are a true partner.' },
 ];
 
-export const trends: Trend[] = [];
+export const trends: Trend[] = [
+  {
+    slug: 'asymmetrical-layouts-in-web-design',
+    title: 'The Rise of Asymmetrical Layouts in Web Design',
+    author: 'Jane Doe',
+    date: '2024-07-28T10:00:00.000Z',
+    imageId: 'trend-post-1',
+    excerpt: 'Move over, grids! Asymmetrical layouts are bringing a new level of dynamism and visual interest to web design. Discover how breaking the balance can create a more engaging user experience.',
+    content: 'For years, web design has been dominated by symmetrical, grid-based layouts. They are balanced, organized, and easy to navigate. However, a new trend is emerging that challenges this norm: asymmetry. Asymmetrical layouts create tension and dynamism by intentionally avoiding a perfect mirror image. This can guide the user\'s eye across the page in a more deliberate way, highlighting key content and creating a more memorable visual journey. When used effectively, asymmetry can make a design feel more modern, energetic, and unique, setting it apart from more traditional, predictable websites. It allows for more creative freedom in placing elements like text, images, and calls-to-action, leading to innovative and engaging user experiences.'
+  },
+  {
+    slug: 'broken-grid-and-overlapping-elements',
+    title: 'Breaking the Grid: A Look at Overlapping Elements',
+    author: 'John Smith',
+    date: '2024-07-25T14:30:00.000Z',
+    imageId: 'trend-post-2',
+    excerpt: 'Designers are pushing boundaries by breaking free from rigid grid structures and using overlapping elements to add depth and a sense of tangibility to their websites.',
+    content: 'The "broken grid" layout is a design approach that starts with a traditional grid and then intentionally deviates from it. This often involves layering and overlapping elements, such as images extending beyond their container or text blocks sitting on top of photos. This technique adds a sense of depth and a tactile quality to the design, making it feel more like a physical collage. Overlapping elements can create a strong visual hierarchy, drawing attention to important information and establishing a relationship between different pieces of content. While it can be more challenging to implement responsively, the result is often a sophisticated and visually rich website that captures user attention.'
+  },
+  {
+    slug: 'interactive-and-animated-interfaces',
+    title: 'Beyond Static: The Power of Interactive and Animated Interfaces',
+    author: 'Alex Johnson',
+    date: '2024-07-22T09:00:00.000Z',
+    imageId: 'trend-post-3',
+    excerpt: 'From subtle micro-interactions to full-blown animations, interactive elements are transforming websites from static pages into dynamic experiences that delight and engage users.',
+    content: 'Interactivity is no longer just a bonus feature; it\'s becoming a core component of modern web design. Micro-interactions, such as button hover effects or animated form inputs, provide immediate feedback and make an interface feel more responsive and intuitive. Larger-scale animations and page transitions can guide users through a narrative, tell a story, and create a "wow" factor. These dynamic elements, when used thoughtfully, improve usability by providing cues and context. They can also significantly enhance brand personality, making a website more enjoyable and memorable. The key is to ensure animations are purposeful and enhance the user experience, rather than distracting from it.'
+  }
+];
+
 
 export const teamMembers: TeamMember[] = [
   { name: 'Jane Doe', role: 'Lead Designer', imageId: 'team-member-1', bio: 'With over a decade of experience, Jane is the creative force behind our most iconic designs. She has a passion for typography and minimalist aesthetics.' },

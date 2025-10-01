@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground mt-auto">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <Logo />
             <p className="text-sm text-muted-foreground">
@@ -31,26 +31,6 @@ const Footer = () => {
               <li><Link href="/services#app-dev" className="text-sm hover:text-primary">App Development</Link></li>
               <li><Link href="/services#seo" className="text-sm hover:text-primary">SEO Optimization</Link></li>
             </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="Twitter">
-                  <Twitter className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="GitHub">
-                  <Github className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
         <div className="border-t mt-8 pt-6 text-center text-sm text-muted-foreground">

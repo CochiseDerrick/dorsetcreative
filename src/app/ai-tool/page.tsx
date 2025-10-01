@@ -1,5 +1,6 @@
 import { Palette } from 'lucide-react';
 import type { Metadata } from 'next';
+import AiToolForm from './ai-tool-form';
 
 export const metadata: Metadata = {
     title: 'AI Style Suggestions Tool',
@@ -24,23 +25,14 @@ export default function AiToolPage() {
             AI-Powered Style Suggestions
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get instant, expert-level feedback on your web project. This feature is currently available on our full Next.js deployment.
+            Get instant, expert-level feedback on your web project. Fill in the details below to get started.
           </p>
         </div>
       </header>
       
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="bg-card p-8 rounded-lg border text-center">
-            <h2 className="text-2xl font-bold mb-4">AI Tool Coming Soon</h2>
-            <p className="text-muted-foreground mb-6">
-              Our AI-powered style suggestion tool requires server-side processing. 
-              This feature is available on our full deployment at <strong>dorsetcreative.com</strong>.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              For immediate assistance with your project, please contact us directly.
-            </p>
-          </div>
+          <AiToolForm />
         </div>
       </section>
     </div>

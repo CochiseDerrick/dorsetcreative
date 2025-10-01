@@ -13,7 +13,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Services | Dorset Creative Hub',
+  title: 'Services | Dorset Creative Ltd',
   description: 'Our services: Web Design, App Development, and SEO Optimization.',
 };
 

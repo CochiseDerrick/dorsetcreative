@@ -6,8 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Dorset Creative Hub',
-  description: 'Get in touch with Dorset Creative Hub for a project quote or inquiry.',
+  title: 'Contact Us | Dorset Creative Ltd',
+  description: 'Get in touch with Dorset Creative Ltd for a project quote or inquiry.',
 };
 
 export default function ContactPage() {

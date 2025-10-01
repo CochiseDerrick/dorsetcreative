@@ -6,7 +6,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
-  title: 'Dorset Creative Hub',
+  title: 'Dorset Creative Ltd',
   description: 'Growth, Creativity, Connection | Web & App Development',
 };
 

@@ -3,7 +3,7 @@ import AiToolForm from './ai-tool-form';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'AI Style Suggestions | Dorset Creative Hub',
+    title: 'AI Style Suggestions | Dorset Creative Ltd',
     description: 'Use our AI-powered tool to get design and code style suggestions for your project.',
 };
 

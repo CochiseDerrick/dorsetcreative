@@ -2,8 +2,8 @@ import { Users, Lightbulb, TrendingUp } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Dorset Creative Hub',
-  description: 'Learn about our mission, values, and the talented team at Dorset Creative Hub.',
+  title: 'About Us | Dorset Creative Ltd',
+  description: 'Learn about our mission, values, and the talented team at Dorset Creative Ltd.',
 };
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <header className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter">
-            About Dorset Creative Hub
+            About Dorset Creative Ltd
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             We are a passionate team of designers, developers, and strategists dedicated to fostering growth, creativity, and connection through exceptional digital experiences.

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${post.title} | Dorset Creative Hub Trends`,
+    title: `${post.title} | Dorset Creative Ltd Trends`,
     description: post.excerpt,
   };
 }

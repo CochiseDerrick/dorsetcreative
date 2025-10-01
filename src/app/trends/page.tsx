@@ -14,7 +14,7 @@ import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Trends | Dorset Creative Hub',
+  title: 'Trends | Dorset Creative Ltd',
   description: 'Insights, tips, and industry news related to web design and app development.',
 };
 

@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { submitContactForm } from '@/lib/actions';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ContactForm() {
@@ -31,16 +30,15 @@ export default function ContactForm() {
     setIsSubmitting(true);
     
     try {
-      // Create FormData manually to avoid React hydration issues
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('subject', formData.subject);
-      formDataToSend.append('message', formData.message);
-      
-      console.log('Sending form data:', formData);
-      
-      const result = await submitContactForm(formDataToSend);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
       
       if (result.success) {
         toast({
@@ -55,7 +53,6 @@ export default function ContactForm() {
           message: ''
         });
       } else {
-        console.error('Form submission error:', result.error);
         toast({
           title: "Error",
           description: result.error || "Failed to send message. Please try again.",

@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { trends } from '@/lib/data';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://dorsetcreative.com';
 

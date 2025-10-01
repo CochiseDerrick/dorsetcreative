@@ -8,7 +8,7 @@ import {
   Quote,
   Search,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import {Button} from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -24,18 +24,22 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { Badge } from '@/components/ui/badge';
-import { services, testimonials } from '@/lib/data';
-
+import {Badge} from '@/components/ui/badge';
+import {services, testimonials} from '@/lib/data';
+import Love from '../assets/lovetovisit.png';
+import Iron from '../assets/ironawe.png';
+import Dhamma from '../assets/dhamma.png';
 export default function Home() {
   const featuredProjects = [
-    { id: '1', title: 'lovetovisit.com', description: 'The UK’s leading events and ticketing platform with a focus on user experience.', imageUrl: 'https://images.unsplash.com/photo-1517694712202-1428bc64c2b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlJTIwc2NyZWVuc2hvdHxlbnwwfHx8fDE3NTkyNjA3ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'website screenshot', tags: ['Web Design', 'Next.js', 'E-commerce'] },
-    { id: '2', title: 'ironawe.uk', description: 'A powerful e-commerce store for a blacksmith selling custom ironwork.', imageUrl: 'https://images.unsplash.com/photo-1581141849291-1125c7b692b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpcm9ud29yayUyMHRvb2xzfGVufDB8fHx8fDE3NTkyNjEwODF8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'ironwork tools', tags: ['E-commerce', 'Web Design', 'Blacksmith'] },
-    { id: '3', title: 'thedhammapada.co.uk', description: 'A serene and thoughtful website presenting the ancient Buddhist text, The Dhammapada.', imageUrl: 'https://images.unsplash.com/photo-1544699049-5e1a3843a41a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidWRkaGlzdCUyMHRleHR8ZW58MHx8fHwxNzU5MjYxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'buddhist text', tags: ['Web Design', 'Content', 'Spirituality'] },
+    {id: '1', title: 'lovetovisit.com', description: 'The UK’s leading events and ticketing platform with a focus on user experience.', imageUrl: 'https://images.unsplash.com/photo-1517694712202-1428bc64c2b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlJTIwc2NyZWVuc2hvdHxlbnwwfHx8fDE3NTkyNjA3ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'website screenshot', tags: ['Web Design', 'Next.js', 'E-commerce']},
+    {id: '2', title: 'ironawe.uk', description: 'A powerful e-commerce store for a blacksmith selling custom ironwork.', imageUrl: 'https://images.unsplash.com/photo-1581141849291-1125c7b692b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpcm9ud29yayUyMHRvb2xzfGVufDB8fHx8fDE3NTkyNjEwODF8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'ironwork tools', tags: ['E-commerce', 'Web Design', 'Blacksmith']},
+    {id: '3', title: 'thedhammapada.co.uk', description: 'A serene and thoughtful website presenting the ancient Buddhist text, The Dhammapada.', imageUrl: 'https://images.unsplash.com/photo-1544699049-5e1a3843a41a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidWRkaGlzdCUyMHRleHR8ZW58MHx8fHwxNzU5MjYxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'buddhist text', tags: ['Web Design', 'Content', 'Spirituality']},
   ];
-  
+
   const heroImageUrl = "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMHRlY2h8ZW58MHx8fHwxNzU5MjE3OTQxfDA&ixlib=rb-4.1.0&q=80&w=1080";
   const heroImageHint = "abstract tech";
+
+  const images = [Love, Iron, Dhamma];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -83,9 +87,9 @@ export default function Home() {
                 <Card key={service.id} className="text-center flex flex-col">
                   <CardHeader>
                     <div className="mx-auto bg-primary text-primary-foreground p-4 rounded-full w-fit">
-                       {service.id === 'web-design' && <PenTool size={32} />}
-                       {service.id === 'app-dev' && <Code size={32} />}
-                       {service.id === 'seo' && <Search size={32} />}
+                      {service.id === 'web-design' && <PenTool size={32} />}
+                      {service.id === 'app-dev' && <Code size={32} />}
+                      {service.id === 'seo' && <Search size={32} />}
                     </div>
                   </CardHeader>
                   <CardContent className="flex-grow">
@@ -93,9 +97,9 @@ export default function Home() {
                     <CardDescription>{service.description}</CardDescription>
                   </CardContent>
                   <CardFooter className="justify-center">
-                     <Button asChild variant="link">
-                        <Link href="/services">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                     </Button>
+                    <Button asChild variant="link">
+                      <Link href="/services">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
                   </CardFooter>
                 </Card>
               ))}
@@ -112,12 +116,12 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredProjects.map((project) => {
+              {featuredProjects.map((project, i) => {
                 return (
                   <Card key={project.id} className="overflow-hidden group">
                     <div className="relative h-60">
                       <Image
-                        src={project.imageUrl}
+                        src={images[i]}
                         alt={project.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -149,7 +153,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         <section id="ai-tool-promo" className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -166,7 +170,7 @@ export default function Home() {
                 </Button>
               </div>
               <div className="flex justify-center items-center bg-primary/10 p-8 rounded-lg">
-                  <Palette size={120} className="text-primary" />
+                <Palette size={120} className="text-primary" />
               </div>
             </div>
           </div>
@@ -194,12 +198,12 @@ export default function Home() {
                     <div className="p-1 h-full">
                       <Card className="flex flex-col h-full">
                         <CardContent className="pt-6 flex-grow flex flex-col justify-between">
-                            <Quote className="w-8 h-8 text-primary mb-4" />
-                            <p className="text-muted-foreground italic mb-4 flex-grow">"{testimonial.quote}"</p>
-                            <div>
-                                <p className="font-semibold">{testimonial.name}</p>
-                                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                            </div>
+                          <Quote className="w-8 h-8 text-primary mb-4" />
+                          <p className="text-muted-foreground italic mb-4 flex-grow">"{testimonial.quote}"</p>
+                          <div>
+                            <p className="font-semibold">{testimonial.name}</p>
+                            <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                          </div>
                         </CardContent>
                       </Card>
                     </div>

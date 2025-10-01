@@ -71,7 +71,7 @@ export const trends: Trend[] = [
     title: 'Beyond Static: The Power of Interactive and Animated Interfaces',
     author: 'Liam Chen',
     date: '2024-07-22T09:00:00.000Z',
-    imageUrl: 'https://images.unsplash.com/photo-1738687221127-fe4d606cfcd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2VvJTIwYW5hbHl0aWNzfGVufDB8fHx8fDE3NTkyNTMxMjR8MA&ixlib-rb-4.1.0&q=80&w=1080',
+    imageUrl: 'https://images.unsplash.com/photo-1738687221127-fe4d606cfcd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2VvJTIwYW5hbHl0aWNzfGVufDB8fHx8fDE3NTkyNTMxMjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'seo analytics',
     excerpt: 'From subtle micro-interactions to full-blown animations, interactive elements are transforming websites from static pages into dynamic experiences that delight and engage users.',
     content: 'Interactivity is no longer just a bonus feature; it\'s becoming a core component of modern web design. Micro-interactions, such as button hover effects or animated form inputs, provide immediate feedback and make an interface feel more responsive and intuitive. Larger-scale animations and page transitions can guide users through a narrative, tell a story, and create a "wow" factor. These dynamic elements, when used thoughtfully, improve usability by providing cues and context. They can also significantly enhance brand personality, making a website more enjoyable and memorable. The key is to ensure animations are purposeful and enhance the user experience, rather than distracting from it.'
@@ -91,7 +91,7 @@ export const trends: Trend[] = [
     title: 'Dark Mode: A New Standard in UI Layout Design',
     author: 'Marcus Finch',
     date: '2024-07-18T16:00:00.000Z',
-    imageUrl: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkYXJrJTIwbW9kZSUyMFVJdGVufDB8fHx8MTcyMTgxNDExNHww&ixlib-rb-4.1.0&q=80&w=1080',
+    imageUrl: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkYXJrJTIwbW9kZSUyMFVJdGVufDB8fHx8MTcyMTgxNDExNHww&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'dark mode UI',
     excerpt: 'Dark mode has moved from a niche feature to a user expectation. We explore the layout considerations for designing effective, readable, and visually stunning dark UIs.',
     content: 'Dark mode is more than just an inverted color scheme; it requires a different approach to layout and visual hierarchy. In a dark UI, contrast, typography, and depth play crucial roles. Designers must carefully manage light and shadow to create separation between elements and guide the user. Because bright colors can cause eye strain against a dark background, a more subdued and limited color palette is often more effective. Spacing and layout become even more critical to prevent a design from feeling crowded. When done right, a dark mode layout can reduce eye strain in low-light conditions, save battery life on OLED screens, and provide a sleek, modern aesthetic that many users now prefer.'

@@ -10,14 +10,13 @@ import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import type { Project } from '@/lib/types';
 
-
 export const metadata: Metadata = {
   title: 'Portfolio | Dorset Creative Hub',
   description: 'Explore our portfolio of website designs and application developments.',
 };
 
 export default function PortfolioPage() {
-  const projects: Project[] = [
+    const projects: Project[] = [
     { id: '1', title: 'lovetovisit.com', description: 'The UK’s leading events and ticketing platform with a focus on user experience.', imageUrl: '/lovetovisit.png', imageHint: 'website screenshot', tags: ['Web Design', 'Next.js', 'E-commerce'] },
     { id: '2', title: 'Fintech Mobile App', description: 'A secure and intuitive mobile banking application for a new generation.', imageUrl: 'https://images.unsplash.com/photo-1542641728-6ca359b085f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzU5MjU4NTMyfDA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'mobile app', tags: ['App Development', 'iOS', 'Android'] },
     { id: '3', title: 'Innovate SaaS', description: 'A comprehensive dashboard for a B2B software-as-a-service product.', imageUrl: 'https://images.unsplash.com/photo-1653933686802-86d21b59b03b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkYXNoYm9hcmQlMjB1aXxlbnwwfHx8fDE3NTkyNTA5NDd8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'dashboard ui', tags: ['Web Design', 'UI/UX', 'Dashboard'] },

@@ -38,7 +38,7 @@ export const services: Service[] = [
 ];
 
 export const projects: Project[] = [
-  { id: '1', title: 'ironawe.uk', description: 'A cutting-edge online retail platform with a focus on user experience.', imageId: 'portfolio-1', tags: ['Web Design', 'React', 'E-commerce'] },
+  { id: '1', title: 'lovetovisit.com', description: 'The UK’s leading events and ticketing platform with a focus on user experience.', imageId: 'lovetovisit', tags: ['Web Design', 'Next.js', 'E-commerce'] },
   { id: '2', title: 'Fintech Mobile App', description: 'A secure and intuitive mobile banking application for a new generation.', imageId: 'portfolio-2', tags: ['App Development', 'iOS', 'Android'] },
   { id: '3', title: 'Innovate SaaS', description: 'A comprehensive dashboard for a B2B software-as-a-service product.', imageId: 'portfolio-3', tags: ['Web Design', 'UI/UX', 'Dashboard'] },
   { id: '4', title: 'Globe Corp Website', description: 'A full redesign of a multinational corporation\'s online presence.', imageId: 'portfolio-4', tags: ['Web Design', 'Corporate', 'CMS'] },

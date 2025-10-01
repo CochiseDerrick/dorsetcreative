@@ -1,5 +1,5 @@
 
-import type { Service, Trend, Testimonial } from './types';
+import type { Service, Trend, Testimonial, Project } from './types';
 
 export const services: Service[] = [
   {
@@ -101,7 +101,7 @@ export const trends: Trend[] = [
     title: 'SPA vs. Multi-Page: Choosing the Right Application Layout',
     author: 'Liam Chen',
     date: '2024-07-15T08:00:00.000Z',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBhcHBsaWNhdGlvbnxlbnwwfHx8fDE3MjE4MTQxNTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBhcHBsaWNhdGlvbnxlbnwwfHx8fDE3MjE4MTQxNTJ8MA&ixlib-rb-4.1.0&q=80&w=1080',
     imageHint: 'web application',
     excerpt: 'The architecture of your application layout—Single-Page Application (SPA) or Multi-Page Application (MPA)—has a huge impact on user experience. Which one is right for your project?',
     content: 'Choosing between a Single-Page Application (SPA) and a Multi-Page Application (MPA) is a fundamental layout decision. SPAs load a single HTML page and dynamically update content, offering a fast, fluid, app-like experience. They are great for complex applications with a lot of user interaction, like dashboards or social networks. MPAs, the traditional web model, reload the entire page with each new request. This approach is often better for SEO and is well-suited for content-heavy sites like e-commerce stores or blogs where each page needs to be indexable. The choice depends on the project\'s goals: a rich, interactive experience might favor an SPA, while a broad, content-focused site might be better as an MPA.'

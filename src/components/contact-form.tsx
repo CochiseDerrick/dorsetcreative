@@ -10,13 +10,37 @@ import { useToast } from '@/hooks/use-toast';
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
   const { toast } = useToast();
 
-  async function handleSubmit(formData: FormData) {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
     setIsSubmitting(true);
     
     try {
-      const result = await submitContactForm(formData);
+      // Create FormData manually to avoid React hydration issues
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      
+      console.log('Sending form data:', formData);
+      
+      const result = await submitContactForm(formDataToSend);
       
       if (result.success) {
         toast({
@@ -24,9 +48,14 @@ export default function ContactForm() {
           description: "Thank you for your message. We'll get back to you soon.",
         });
         // Reset form
-        const form = document.getElementById('contact-form') as HTMLFormElement;
-        if (form) form.reset();
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
       } else {
+        console.error('Form submission error:', result.error);
         toast({
           title: "Error",
           description: result.error || "Failed to send message. Please try again.",
@@ -34,6 +63,7 @@ export default function ContactForm() {
         });
       }
     } catch (error) {
+      console.error('Unexpected error:', error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",
@@ -51,16 +81,21 @@ export default function ContactForm() {
         <CardDescription>We typically respond within 24 hours.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form id="contact-form" action={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid sm:grid-cols-2 gap-4">
             <Input 
               name="name"
+              value={formData.name}
+              onChange={handleInputChange}
               placeholder="Your Name" 
               aria-label="Your Name" 
               required 
+              minLength={2}
             />
             <Input 
               name="email"
+              value={formData.email}
+              onChange={handleInputChange}
               type="email" 
               placeholder="Your Email" 
               aria-label="Your Email" 
@@ -69,16 +104,22 @@ export default function ContactForm() {
           </div>
           <Input 
             name="subject"
+            value={formData.subject}
+            onChange={handleInputChange}
             placeholder="Subject" 
             aria-label="Subject" 
             required 
+            minLength={5}
           />
           <Textarea 
             name="message"
+            value={formData.message}
+            onChange={handleInputChange}
             placeholder="Your Message" 
             className="min-h-[150px]" 
             aria-label="Your Message" 
             required 
+            minLength={20}
           />
           <Button 
             type="submit" 

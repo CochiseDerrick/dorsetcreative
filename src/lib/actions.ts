@@ -79,30 +79,37 @@ export async function generateStyleSuggestions(
 }
 
 export async function submitContactForm(formData: FormData): Promise<ContactResult> {
+  // Extract and clean the form data
+  const name = formData.get('name')?.toString()?.trim() || '';
+  const email = formData.get('email')?.toString()?.trim() || '';
+  const subject = formData.get('subject')?.toString()?.trim() || '';
+  const message = formData.get('message')?.toString()?.trim() || '';
+
   const validatedFields = ContactSchema.safeParse({
-    name: formData.get('name'),
-    email: formData.get('email'),
-    subject: formData.get('subject'),
-    message: formData.get('message'),
+    name,
+    email,
+    subject,
+    message,
   });
 
   if (!validatedFields.success) {
+    const errorMessages = validatedFields.error.issues.map(issue => issue.message).join(', ');
     return {
       success: false,
-      error: 'Please check all fields and try again.',
+      error: `Please fix the following: ${errorMessages}`,
     };
   }
 
-  const { name, email, subject, message } = validatedFields.data;
+  const validatedData = validatedFields.data;
 
   try {
     // Check if email is configured
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
       console.log('Contact form submission (Email not configured):', {
-        name,
-        email,
-        subject,
-        message,
+        name: validatedData.name,
+        email: validatedData.email,
+        subject: validatedData.subject,
+        message: validatedData.message,
         timestamp: new Date().toISOString(),
       });
       return { success: true };
@@ -114,8 +121,8 @@ export async function submitContactForm(formData: FormData): Promise<ContactResu
     await transporter.sendMail({
       from: `"Dorset Creative Contact Form" <${process.env.GMAIL_USER}>`,
       to: 'support@dorsetcreative.online',
-      replyTo: email,
-      subject: `Contact Form: ${subject}`,
+      replyTo: validatedData.email,
+      subject: `Contact Form: ${validatedData.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #e5e5e5; padding-bottom: 10px;">
@@ -123,33 +130,33 @@ export async function submitContactForm(formData: FormData): Promise<ContactResu
           </h2>
           
           <div style="background: #f9f9f9; padding: 20px; border-radius: 5px; margin: 20px 0;">
-            <p style="margin: 10px 0;"><strong>Name:</strong> ${name}</p>
-            <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-            <p style="margin: 10px 0;"><strong>Subject:</strong> ${subject}</p>
+            <p style="margin: 10px 0;"><strong>Name:</strong> ${validatedData.name}</p>
+            <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${validatedData.email}">${validatedData.email}</a></p>
+            <p style="margin: 10px 0;"><strong>Subject:</strong> ${validatedData.subject}</p>
           </div>
           
           <div style="margin: 20px 0;">
             <h3 style="color: #333;">Message:</h3>
             <div style="background: white; padding: 15px; border-left: 4px solid #007acc; border-radius: 3px;">
-              ${message.replace(/\n/g, '<br>')}
+              ${validatedData.message.replace(/\n/g, '<br>')}
             </div>
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e5e5; color: #666; font-size: 12px;">
             <p>This message was sent from the Dorset Creative contact form at ${new Date().toLocaleString()}.</p>
-            <p>Reply directly to this email to respond to ${name}.</p>
+            <p>Reply directly to this email to respond to ${validatedData.name}.</p>
           </div>
         </div>
       `,
       text: `
 New Contact Form Submission
 
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
+Name: ${validatedData.name}
+Email: ${validatedData.email}
+Subject: ${validatedData.subject}
 
 Message:
-${message}
+${validatedData.message}
 
 Sent at: ${new Date().toLocaleString()}
       `,

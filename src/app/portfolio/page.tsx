@@ -6,8 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import type { Metadata } from 'next';
+import {Badge} from '@/components/ui/badge';
+import type {Metadata} from 'next';
+import Love from '../assets/lovetovisit.png';
+import Iron from '../assets/ironawe.png';
+import Dhamma from '../assets/dhamma.png';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -23,11 +26,13 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
-    const projects = [
-        { id: '1', title: 'lovetovisit.com', description: 'The UK’s leading events and ticketing platform with a focus on user experience.', imageUrl: 'https://images.unsplash.com/photo-1517694712202-1428bc64c2b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlJTIwc2NyZWVuc2hvdHxlbnwwfHx8fDE3NTkyNjA3ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'website screenshot', tags: ['Web Design', 'Next.js', 'E-commerce'] },
-        { id: '2', title: 'ironawe.uk', description: 'A powerful e-commerce store for a blacksmith selling custom ironwork.', imageUrl: 'https://images.unsplash.com/photo-1581141849291-1125c7b692b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpcm9ud29yayUyMHRvb2xzfGVufDB8fHx8fDE3NTkyNjEwODF8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'ironwork tools', tags: ['E-commerce', 'Web Design', 'Blacksmith'] },
-        { id: '3', title: 'thedhammapada.co.uk', description: 'A serene and thoughtful website presenting the ancient Buddhist text, The Dhammapada.', imageUrl: 'https://images.unsplash.com/photo-1544699049-5e1a3843a41a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidWRkaGlzdCUyMHRleHR8ZW58MHx8fHwxNzU5MjYxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'buddhist text', tags: ['Web Design', 'Content', 'Spirituality'] },
-    ];
+  const projects = [
+    {id: '1', title: 'lovetovisit.com', description: 'The UK’s leading events and ticketing platform with a focus on user experience.', imageUrl: 'https://images.unsplash.com/photo-1517694712202-1428bc64c2b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlJTIwc2NyZWVuc2hvdHxlbnwwfHx8fDE3NTkyNjA3ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'website screenshot', tags: ['Web Design', 'Next.js', 'E-commerce']},
+    {id: '2', title: 'ironawe.uk', description: 'A powerful e-commerce store for a blacksmith selling custom ironwork.', imageUrl: 'https://images.unsplash.com/photo-1581141849291-1125c7b692b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpcm9ud29yayUyMHRvb2xzfGVufDB8fHx8fDE3NTkyNjEwODF8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'ironwork tools', tags: ['E-commerce', 'Web Design', 'Blacksmith']},
+    {id: '3', title: 'thedhammapada.co.uk', description: 'A serene and thoughtful website presenting the ancient Buddhist text, The Dhammapada.', imageUrl: 'https://images.unsplash.com/photo-1544699049-5e1a3843a41a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidWRkaGlzdCUyMHRleHR8ZW58MHx8fHwxNzU5MjYxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'buddhist text', tags: ['Web Design', 'Content', 'Spirituality']},
+  ];
+
+  const images = [Love, Iron, Dhamma];
 
   return (
     <div className="bg-background">
@@ -45,12 +50,12 @@ export default function PortfolioPage() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => {
+            {projects.map((project, i) => {
               return (
                 <Card key={project.id} className="overflow-hidden group flex flex-col">
                   <div className="relative h-60 w-full">
                     <Image
-                      src={project.imageUrl}
+                      src={images[i]}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -65,7 +70,7 @@ export default function PortfolioPage() {
                     <CardDescription className="mb-4">{project.description}</CardDescription>
                   </CardContent>
                   <CardContent>
-                     <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <Badge key={tag} variant="secondary">{tag}</Badge>
                       ))}

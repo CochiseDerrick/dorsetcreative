@@ -53,7 +53,7 @@ export default function PortfolioPage() {
             {projects.map((project, i) => {
               return (
                 <Card key={project.id} className="overflow-hidden group flex flex-col">
-                  <div className="relative h-60 w-full">
+                  <div className="relative h-60 w-full overflow-hidden">
                     <Image
                       src={images[i]}
                       alt={project.title}

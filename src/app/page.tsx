@@ -44,12 +44,12 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
+        <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white  overflow-hidden">
           <Image
             src={heroImageUrl}
             alt="Abstract background for hero section"
             fill
-            className="object-cover"
+            className="object-cover animate-hero-zoom"
             priority
             data-ai-hint={heroImageHint}
           />

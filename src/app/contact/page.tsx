@@ -42,14 +42,14 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 mr-4 mt-1 text-primary" />
                     <div>
                       <h3 className="font-semibold text-foreground">Phone</h3>
-                      <p>+1 (555) 123-4567</p>
+                      <p>07831 708077</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <MapPin className="h-6 w-6 mr-4 mt-1 text-primary" />
                     <div>
                       <h3 className="font-semibold text-foreground">Office</h3>
-                      <p>123 Creative Lane, Dorset, UK</p>
+                      <p>Flat 1, 25 Old Coach Mews, Poole, Dorset, BH14 0LB</p>
                     </div>
                   </div>
                 </div>

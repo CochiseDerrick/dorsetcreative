@@ -8,9 +8,9 @@ import {
 } from '@/components/ui/card';
 import {Badge} from '@/components/ui/badge';
 import type {Metadata} from 'next';
-import Love from '../assets/lovetovisit.png';
-import Iron from '../assets/ironawe.png';
-import Dhamma from '../assets/dhamma.png';
+import Love from '../../assets/lovetovisit.png';
+import Iron from '../../assets/ironawe.png';
+import Dhamma from '../../assets/dhamma.png';
 
 export const metadata: Metadata = {
   title: 'Portfolio',

@@ -1,3 +1,4 @@
+
 export type Service = {
   id: string;
   title: string;
@@ -14,7 +15,8 @@ export type Project = {
   id: string;
   title: string;
   description: string;
-  imageId: string;
+  imageUrl: string;
+  imageHint: string;
   tags: string[];
 };
 
@@ -29,7 +31,8 @@ export type Trend = {
   title: string;
   author: string;
   date: string;
-  imageId: string;
+  imageUrl: string;
+  imageHint: string;
   excerpt: string;
   content: string;
 };

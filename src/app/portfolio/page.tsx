@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { projects } from '@/lib/data';
-import { getPlaceholderImage } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -34,16 +33,15 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => {
-              const projectImage = getPlaceholderImage(project.imageId);
               return (
                 <Card key={project.id} className="overflow-hidden group flex flex-col">
                   <div className="relative h-60 w-full">
                     <Image
-                      src={projectImage.imageUrl}
+                      src={project.imageUrl}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      data-ai-hint={projectImage.imageHint}
+                      data-ai-hint={project.imageHint}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>

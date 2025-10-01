@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { trends } from '@/lib/data';
-import { getPlaceholderImage } from '@/lib/placeholder-images';
 import { notFound } from 'next/navigation';
 import { Calendar, User } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -37,8 +36,6 @@ export default function TrendPostPage({ params }: Props) {
     notFound();
   }
 
-  const postImage = getPlaceholderImage(post.imageId);
-
   return (
     <article>
       <header className="py-16 md:py-24 bg-secondary">
@@ -62,11 +59,11 @@ export default function TrendPostPage({ params }: Props) {
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="relative h-64 md:h-96 w-full max-w-5xl mx-auto mb-8 rounded-lg overflow-hidden">
             <Image
-                src={postImage.imageUrl}
+                src={post.imageUrl}
                 alt={post.title}
                 fill
                 className="object-cover"
-                data-ai-hint={postImage.imageHint}
+                data-ai-hint={post.imageHint}
                 priority
             />
         </div>

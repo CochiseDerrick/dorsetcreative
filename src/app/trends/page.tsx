@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { trends } from '@/lib/data';
-import { getPlaceholderImage } from '@/lib/placeholder-images';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
@@ -42,18 +41,17 @@ export default function TrendsPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {trends.map((post) => {
-                const postImage = getPlaceholderImage(post.imageId);
                 return (
                   <Card key={post.slug} className="flex flex-col">
                     <CardHeader className="p-0">
                       <Link href={`/trends/${post.slug}`}>
                         <div className="relative h-60 w-full">
                           <Image
-                            src={postImage.imageUrl}
+                            src={post.imageUrl}
                             alt={post.title}
                             fill
                             className="object-cover rounded-t-lg"
-                            data-ai-hint={postImage.imageHint}
+                            data-ai-hint={post.imageHint}
                           />
                         </div>
                       </Link>

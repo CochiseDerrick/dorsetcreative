@@ -26,23 +26,23 @@ import {
 } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
 import { projects, services, testimonials } from '@/lib/data';
-import { getPlaceholderImage } from '@/lib/placeholder-images';
 
 export default function Home() {
-  const heroImage = getPlaceholderImage('hero-background');
   const featuredProjects = projects.slice(0, 3);
+  const heroImageUrl = "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMHRlY2h8ZW58MHx8fHwxNzU5MjE3OTQxfDA&ixlib=rb-4.1.0&q=80&w=1080";
+  const heroImageHint = "abstract tech";
 
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
           <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
+            src={heroImageUrl}
+            alt="Abstract background for hero section"
             fill
             className="object-cover"
             priority
-            data-ai-hint={heroImage.imageHint}
+            data-ai-hint={heroImageHint}
           />
           <div className="absolute inset-0 bg-primary/70" />
           <div className="relative z-10 p-4 space-y-4 md:space-y-6 max-w-4xl">
@@ -108,16 +108,15 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredProjects.map((project) => {
-                const projectImage = getPlaceholderImage(project.imageId);
                 return (
                   <Card key={project.id} className="overflow-hidden group">
                     <div className="relative h-60">
                       <Image
-                        src={projectImage.imageUrl}
+                        src={project.imageUrl}
                         alt={project.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        data-ai-hint={projectImage.imageHint}
+                        data-ai-hint={project.imageHint}
                       />
                     </div>
                     <CardHeader>

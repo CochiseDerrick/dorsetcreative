@@ -176,7 +176,7 @@ export default function Home() {
         <section id="testimonials" className="py-16 md:py-24 bg-secondary">
           <div className="container mx-auto px-4">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
+              <h2 className="text-3xl md-text-4xl font-bold">What Our Clients Say</h2>
               <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
                 We're proud to have partnered with amazing businesses.
               </p>
@@ -215,3 +215,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

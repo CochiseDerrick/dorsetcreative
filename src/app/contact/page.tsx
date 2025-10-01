@@ -97,11 +97,11 @@ export default function ContactPage() {
                 <CardContent>
                   <form className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
-                      <Input placeholder="Your Name" />
-                      <Input type="email" placeholder="Your Email" />
+                      <Input placeholder="Your Name" aria-label="Your Name" />
+                      <Input type="email" placeholder="Your Email" aria-label="Your Email" />
                     </div>
-                    <Input placeholder="Subject" />
-                    <Textarea placeholder="Your Message" className="min-h-[150px]" />
+                    <Input placeholder="Subject" aria-label="Subject" />
+                    <Textarea placeholder="Your Message" className="min-h-[150px]" aria-label="Your Message" />
                     <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                       Send Message
                     </Button>

@@ -29,9 +29,9 @@ import { services, testimonials } from '@/lib/data';
 
 export default function Home() {
   const featuredProjects = [
-    { id: '1', title: 'lovetovisit.com', description: 'The UK’s leading events and ticketing platform with a focus on user experience.', imageUrl: 'https://picsum.photos/seed/lovetovisit/600/400', imageHint: 'website screenshot', tags: ['Web Design', 'Next.js', 'E-commerce'] },
-    { id: '2', title: 'ironawe.uk', description: 'A powerful e-commerce store for a blacksmith selling custom ironwork.', imageUrl: 'https://picsum.photos/seed/ironawe/600/400', imageHint: 'ironwork tools', tags: ['E-commerce', 'Web Design', 'Blacksmith'] },
-    { id: '3', title: 'thedhammapada.co.uk', description: 'A serene and thoughtful website presenting the ancient Buddhist text, The Dhammapada.', imageUrl: 'https://picsum.photos/seed/dhammapada/600/400', imageHint: 'buddhist text', tags: ['Web Design', 'Content', 'Spirituality'] },
+    { id: '1', title: 'lovetovisit.com', description: 'The UK’s leading events and ticketing platform with a focus on user experience.', imageUrl: 'https://images.unsplash.com/photo-1517694712202-1428bc64c2b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlJTIwc2NyZWVuc2hvdHxlbnwwfHx8fDE3NTkyNjA3ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'website screenshot', tags: ['Web Design', 'Next.js', 'E-commerce'] },
+    { id: '2', title: 'ironawe.uk', description: 'A powerful e-commerce store for a blacksmith selling custom ironwork.', imageUrl: 'https://images.unsplash.com/photo-1581141849291-1125c7b692b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpcm9ud29yayUyMHRvb2xzfGVufDB8fHx8fDE3NTkyNjEwODF8MA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'ironwork tools', tags: ['E-commerce', 'Web Design', 'Blacksmith'] },
+    { id: '3', title: 'thedhammapada.co.uk', description: 'A serene and thoughtful website presenting the ancient Buddhist text, The Dhammapada.', imageUrl: 'https://images.unsplash.com/photo-1544699049-5e1a3843a41a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidWRkaGlzdCUyMHRleHR8ZW58MHx8fHwxNzU5MjYxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080', imageHint: 'buddhist text', tags: ['Web Design', 'Content', 'Spirituality'] },
   ];
   
   const heroImageUrl = "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMHRlY2h8ZW58MHx8fHwxNzU5MjE3OTQxfDA&ixlib=rb-4.1.0&q=80&w=1080";
@@ -122,6 +122,7 @@ export default function Home() {
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         data-ai-hint={project.imageHint}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                     <CardHeader>
@@ -185,6 +186,7 @@ export default function Home() {
                 loop: true,
               }}
               className="w-full max-w-4xl mx-auto"
+              aria-roledescription="carousel"
             >
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (

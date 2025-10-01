@@ -6,7 +6,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dorsetcreative.com'),
+  metadataBase: new URL('https://dorsetcreative.online'),
   title: {
     default: 'Dorset Creative Ltd | Web Design & App Development in Dorset, UK',
     template: '%s | Dorset Creative Ltd',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dorset Creative Ltd | Web Design & App Development',
     description: 'Expert web design, app development, and SEO services in Dorset, England. We build beautiful, functional digital experiences.',
-    url: 'https://dorsetcreative.com',
+    url: 'https://dorsetcreative.online',
     siteName: 'Dorset Creative Ltd',
     images: [
       {
@@ -58,10 +58,10 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     'name': 'Dorset Creative Ltd',
-    'url': 'https://dorsetcreative.com',
+    'url': 'https://dorsetcreative.online',
     'potentialAction': {
       '@type': 'SearchAction',
-      'target': 'https://dorsetcreative.com/search?q={search_term_string}',
+      'target': 'https://dorsetcreative.online/search?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };

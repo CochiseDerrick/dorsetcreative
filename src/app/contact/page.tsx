@@ -1,8 +1,6 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import ContactForm from '@/components/contact-form';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -31,9 +29,9 @@ const jsonLd = {
     'addressCountry': 'GB'
   },
   'telephone': '+447831708077',
-  'email': 'hello@dorsetcreative.com',
-  'url': 'https://dorsetcreative.com/contact',
-  'image': 'https://dorsetcreative.com/og-image.png',
+  'email': 'support@dorsetcreative.online',
+  'url': 'https://dorsetcreative.online/contact',
+  'image': 'https://dorsetcreative.online/og-image.png',
   'description': 'Web design and app development agency in Dorset, England.',
 };
 
@@ -67,7 +65,7 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 mr-4 mt-1 text-primary" />
                     <div>
                       <h3 className="font-semibold text-foreground">Email</h3>
-                      <a href="mailto:hello@dorsetcreative.com" className="hover:text-primary">hello@dorsetcreative.com</a>
+                      <a href="mailto:support@dorsetcreative.online" className="hover:text-primary">support@dorsetcreative.online</a>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -89,25 +87,7 @@ export default function ContactPage() {
             </div>
             
             <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Send us a Message</CardTitle>
-                  <CardDescription>We typically respond within 24 hours.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <Input placeholder="Your Name" aria-label="Your Name" />
-                      <Input type="email" placeholder="Your Email" aria-label="Your Email" />
-                    </div>
-                    <Input placeholder="Subject" aria-label="Subject" />
-                    <Textarea placeholder="Your Message" className="min-h-[150px]" aria-label="Your Message" />
-                    <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              <ContactForm />
             </div>
           </div>
         </div>

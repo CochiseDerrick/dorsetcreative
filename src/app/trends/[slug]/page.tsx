@@ -18,8 +18,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${post.title} | Dorset Creative Ltd Trends`,
+    title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      images: [
+        {
+          url: post.imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.imageUrl],
+    },
   };
 }
 
@@ -36,8 +57,26 @@ export default function TrendPostPage({ params }: Props) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    image: post.imageUrl,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    description: post.excerpt,
+  };
+
   return (
     <article>
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter max-w-3xl mx-auto">

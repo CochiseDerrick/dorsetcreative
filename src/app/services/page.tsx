@@ -13,8 +13,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Services | Dorset Creative Ltd',
-  description: 'Our services: Web Design, App Development, and SEO Optimization.',
+  title: 'Our Services',
+  description: 'Explore our services: Web Design, App Development, and SEO Optimization, offered by our expert team at Dorset Creative Ltd in England.',
+  openGraph: {
+    title: 'Services | Dorset Creative Ltd',
+    description: 'Explore our services: Web Design, App Development, and SEO Optimization.',
+  },
+  twitter: {
+    title: 'Services | Dorset Creative Ltd',
+    description: 'Explore our services: Web Design, App Development, and SEO Optimization.',
+  },
 };
 
 export default function ServicesPage() {
@@ -26,7 +34,7 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            We offer a complete suite of digital services designed to elevate your brand and accelerate your growth.
+            We offer a complete suite of digital services designed to elevate your brand and accelerate your growth, from our base in Dorset, England.
           </p>
         </div>
       </header>

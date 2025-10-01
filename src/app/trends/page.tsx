@@ -14,8 +14,16 @@ import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Trends | Dorset Creative Ltd',
-  description: 'Insights, tips, and industry news related to web design and app development.',
+  title: 'Latest Trends',
+  description: 'Our blog on the latest insights, tips, and industry news related to web design, app development, and SEO from Dorset, England.',
+  openGraph: {
+    title: 'Trends | Dorset Creative Ltd',
+    description: 'Insights, tips, and industry news on web design and app development.',
+  },
+  twitter: {
+    title: 'Trends | Dorset Creative Ltd',
+    description: 'Insights, tips, and industry news on web design and app development.',
+  },
 };
 
 export default function TrendsPage() {

@@ -6,13 +6,45 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Dorset Creative Ltd',
-  description: 'Get in touch with Dorset Creative Ltd for a project quote or inquiry.',
+  title: 'Contact Dorset Creative Ltd',
+  description: 'Get in touch with Dorset Creative Ltd for web design, app development, or SEO projects in Dorset, England. Call us at 07831 708077.',
+  openGraph: {
+    title: 'Contact Dorset Creative Ltd',
+    description: 'Get in touch for a project quote or inquiry in Dorset, England.',
+  },
+  twitter: {
+    title: 'Contact Dorset Creative Ltd',
+    description: 'Get in touch for a project quote or inquiry in Dorset, England.',
+  },
 };
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  'name': 'Dorset Creative Ltd',
+  'address': {
+    '@type': 'PostalAddress',
+    'streetAddress': 'Flat 1, 25 Old Coach Mews',
+    'addressLocality': 'Poole',
+    'addressRegion': 'Dorset',
+    'postalCode': 'BH14 0LB',
+    'addressCountry': 'GB'
+  },
+  'telephone': '+447831708077',
+  'email': 'hello@dorsetcreative.com',
+  'url': 'https://dorsetcreative.com/contact',
+  'image': 'https://dorsetcreative.com/og-image.png',
+  'description': 'Web design and app development agency in Dorset, England.',
+};
+
 
 export default function ContactPage() {
   return (
     <div className="bg-background">
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter">

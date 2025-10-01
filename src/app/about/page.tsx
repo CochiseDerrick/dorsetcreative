@@ -2,8 +2,16 @@ import { Users, Lightbulb, TrendingUp } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Dorset Creative Ltd',
-  description: 'Learn about our mission, values, and the talented team at Dorset Creative Ltd.',
+  title: 'About Us',
+  description: 'Learn about our mission, values, and the talented team at Dorset Creative Ltd, a digital agency based in Dorset, England.',
+  openGraph: {
+    title: 'About Dorset Creative Ltd',
+    description: 'Learn about our mission, values, and the talented team at Dorset Creative Ltd.',
+  },
+  twitter: {
+    title: 'About Dorset Creative Ltd',
+    description: 'Learn about our mission, values, and the talented team at Dorset Creative Ltd.',
+  },
 };
 
 export default function AboutPage() {
@@ -15,7 +23,7 @@ export default function AboutPage() {
             About Dorset Creative Ltd
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            We are a passionate team of designers, developers, and strategists dedicated to fostering growth, creativity, and connection through exceptional digital experiences.
+            We are a passionate team of designers, developers, and strategists based in Dorset, England, dedicated to fostering growth, creativity, and connection through exceptional digital experiences.
           </p>
         </div>
       </header>

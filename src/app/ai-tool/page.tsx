@@ -3,8 +3,16 @@ import AiToolForm from './ai-tool-form';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'AI Style Suggestions | Dorset Creative Ltd',
-    description: 'Use our AI-powered tool to get design and code style suggestions for your project.',
+    title: 'AI Style Suggestions Tool',
+    description: 'Use our free AI-powered tool to get instant design and code style suggestions for your web project. Improve your website with expert feedback from Dorset Creative Ltd.',
+    openGraph: {
+        title: 'AI Style Suggestions Tool | Dorset Creative Ltd',
+        description: 'Use our AI-powered tool to get design and code style suggestions for your project.',
+    },
+    twitter: {
+        title: 'AI Style Suggestions Tool | Dorset Creative Ltd',
+        description: 'Use our AI-powered tool to get design and code style suggestions for your project.',
+    }
 };
 
 export default function AiToolPage() {

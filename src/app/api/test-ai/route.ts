@@ -4,16 +4,22 @@ export async function GET() {
   try {
     console.log('🔧 Testing AI service configuration...');
     
-    // Check environment variables
-    const hasApiKey = !!process.env.GOOGLE_AI_API_KEY;
-    const apiKeyPrefix = process.env.GOOGLE_AI_API_KEY ? process.env.GOOGLE_AI_API_KEY.substring(0, 10) : 'NOT SET';
-    const isPlaceholder = process.env.GOOGLE_AI_API_KEY === 'your_google_ai_api_key_here';
+    // Check all relevant environment variables
+    const envVars = {
+      GOOGLE_API_KEY: process.env.GOOGLE_API_KEY ? 'SET' : 'NOT SET',
+      GEMINI_API_KEY: process.env.GEMINI_API_KEY ? 'SET' : 'NOT SET',
+      GOOGLE_AI_API_KEY: process.env.GOOGLE_AI_API_KEY ? 'SET' : 'NOT SET',
+      NODE_ENV: process.env.NODE_ENV,
+    };
     
-    console.log('Environment check:', {
-      hasApiKey,
-      apiKeyPrefix: hasApiKey ? `${apiKeyPrefix}...` : 'NOT SET',
-      isPlaceholder,
-    });
+    const apiKeyConfigured = !!(
+      process.env.GOOGLE_API_KEY || 
+      process.env.GEMINI_API_KEY || 
+      process.env.GOOGLE_AI_API_KEY
+    );
+    
+    console.log('Environment variables:', envVars);
+    console.log('API key configured:', apiKeyConfigured);
 
     // Try to test the AI service with a minimal request
     const { getAiStyleSuggestions } = await import('@/ai/flows/ai-style-suggestions');
@@ -36,8 +42,8 @@ export async function GET() {
       success: true,
       message: 'AI service is working correctly',
       details: {
-        apiKeyConfigured: hasApiKey && !isPlaceholder,
-        apiKeyPrefix: hasApiKey ? `${apiKeyPrefix}...` : 'NOT SET',
+        envVars,
+        apiKeyConfigured,
         testResult: {
           hasResult: !!result,
           suggestionsCount: result?.suggestions?.length || 0,
@@ -59,7 +65,17 @@ export async function GET() {
         message: errorMessage,
         stack: errorStack,
         type: error?.constructor?.name,
-        apiKeyConfigured: !!process.env.GOOGLE_AI_API_KEY && process.env.GOOGLE_AI_API_KEY !== 'your_google_ai_api_key_here',
+        envVars: {
+          GOOGLE_API_KEY: process.env.GOOGLE_API_KEY ? 'SET' : 'NOT SET',
+          GEMINI_API_KEY: process.env.GEMINI_API_KEY ? 'SET' : 'NOT SET',
+          GOOGLE_AI_API_KEY: process.env.GOOGLE_AI_API_KEY ? 'SET' : 'NOT SET',
+          NODE_ENV: process.env.NODE_ENV,
+        },
+        apiKeyConfigured: !!(
+          process.env.GOOGLE_API_KEY || 
+          process.env.GEMINI_API_KEY || 
+          process.env.GOOGLE_AI_API_KEY
+        ),
       }
     }, { status: 500 });
   }

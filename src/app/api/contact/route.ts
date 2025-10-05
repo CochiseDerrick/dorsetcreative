@@ -52,17 +52,10 @@ export async function POST(request: NextRequest) {
         submission: { name, email, subject, message },
         timestamp: new Date().toISOString(),
       });
-      
-      // For development/testing - log the submission even if email isn't configured
-      console.log('📝 Contact form submission logged:', {
-        name, email, subject, message, timestamp: new Date().toISOString()
-      });
-      
       return NextResponse.json({ 
-        success: true, 
-        message: 'Message received. Email service configuration in progress.',
-        warning: 'Email delivery temporarily unavailable - your message has been logged.'
-      });
+        success: false, 
+        error: 'Email service not configured' 
+      }, { status: 500 });
     }
 
     console.log('📧 Attempting to send email with config:', {

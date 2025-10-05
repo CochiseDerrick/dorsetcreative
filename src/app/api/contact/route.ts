@@ -46,22 +46,45 @@ export async function POST(request: NextRequest) {
 
     // Check if email is configured
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
-      console.log('Contact form submission (Email not configured):', {
-        name,
-        email,
-        subject,
-        message,
+      console.log('❌ Email not configured. Missing environment variables:', {
+        hasGmailUser: !!process.env.GMAIL_USER,
+        hasGmailPassword: !!process.env.GMAIL_APP_PASSWORD,
+        submission: { name, email, subject, message },
         timestamp: new Date().toISOString(),
       });
-      return NextResponse.json({ success: true });
+      return NextResponse.json({ 
+        success: false, 
+        error: 'Email service not configured' 
+      }, { status: 500 });
     }
+
+    console.log('📧 Attempting to send email with config:', {
+      from: process.env.GMAIL_USER,
+      to: 'sales@dorsetcreative.online',
+      cc: 'support@dorsetcreative.online',
+      subject: `Contact Form: ${subject}`,
+      timestamp: new Date().toISOString(),
+    });
 
     const transporter = createTransporter();
 
+    try {
+      // Test the connection first
+      await transporter.verify();
+      console.log('✅ SMTP connection verified successfully');
+    } catch (verifyError) {
+      console.error('❌ SMTP connection verification failed:', verifyError);
+      return NextResponse.json({ 
+        success: false, 
+        error: 'Email service connection failed' 
+      }, { status: 500 });
+    }
+
     // Send email using Nodemailer
-    await transporter.sendMail({
+    const emailResult = await transporter.sendMail({
       from: `"Dorset Creative Contact Form" <${process.env.GMAIL_USER}>`,
-      to: 'support@dorsetcreative.online',
+      to: 'sales@dorsetcreative.online',
+      cc: ['support@dorsetcreative.online', process.env.GMAIL_USER], // Send to both support and Gmail account
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       html: `
@@ -103,9 +126,29 @@ Sent at: ${new Date().toLocaleString()}
       `,
     });
 
-    return NextResponse.json({ success: true });
+    console.log('✅ Email sent successfully:', {
+      messageId: emailResult.messageId,
+      response: emailResult.response,
+      accepted: emailResult.accepted,
+      rejected: emailResult.rejected,
+    });
+
+    return NextResponse.json({ 
+      success: true,
+      messageId: emailResult.messageId 
+    });
   } catch (error) {
-    console.error('Contact form submission error:', error);
+    console.error('❌ Contact form submission error:', error);
+    
+    // Log more details about the error
+    if (error instanceof Error) {
+      console.error('Error details:', {
+        name: error.name,
+        message: error.message,
+        stack: error.stack,
+      });
+    }
+    
     return NextResponse.json({
       success: false,
       error: 'Failed to send message. Please try again later.',

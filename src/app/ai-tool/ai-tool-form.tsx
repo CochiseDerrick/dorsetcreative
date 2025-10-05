@@ -31,7 +31,11 @@ const FormSchema = z.object({
   }),
 });
 
-export default function AiToolForm() {
+interface AiToolFormProps {
+  isDisabled?: boolean;
+}
+
+export default function AiToolForm({ isDisabled = false }: AiToolFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<AiStyleSuggestionsOutput | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -50,17 +54,33 @@ export default function AiToolForm() {
     setResult(null);
     setError(null);
 
-    const response = await generateStyleSuggestions(data);
+    try {
+      const response = await generateStyleSuggestions(data);
 
-    if (response.success && response.data) {
-      setResult(response.data);
-    } else {
-      setError(response.error || 'An unknown error occurred.');
+      if (response.success && response.data) {
+        setResult(response.data);
+        toast({
+          title: 'Success!',
+          description: 'AI analysis completed successfully.',
+        });
+      } else {
+        const errorMessage = response.error || 'An unknown error occurred.';
+        setError(errorMessage);
+        toast({
+          variant: 'destructive',
+          title: 'Error',
+          description: errorMessage,
+        });
+      }
+    } catch (error) {
+      const errorMessage = 'Network error. Please check your connection and try again.';
+      setError(errorMessage);
       toast({
         variant: 'destructive',
-        title: 'Error',
-        description: response.error || 'Failed to generate suggestions.',
+        title: 'Network Error',
+        description: errorMessage,
       });
+      console.error('Form submission error:', error);
     }
 
     setIsLoading(false);
@@ -88,6 +108,7 @@ export default function AiToolForm() {
                       <Textarea
                         placeholder="e.g., 'A modern e-commerce site for a sustainable fashion brand, targeting young adults...'"
                         className="min-h-[120px]"
+                        disabled={isDisabled}
                         {...field}
                       />
                     </FormControl>
@@ -108,6 +129,7 @@ export default function AiToolForm() {
                       <Textarea
                         placeholder="e.g., 'Minimalist design, with a neutral color palette, sans-serif fonts, and a focus on clean, grid-based layouts...'"
                         className="min-h-[120px]"
+                        disabled={isDisabled}
                         {...field}
                       />
                     </FormControl>
@@ -118,12 +140,14 @@ export default function AiToolForm() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isLoading} className="w-full sm:w-auto">
+              <Button type="submit" disabled={isLoading || isDisabled} className="w-full sm:w-auto">
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     Analyzing...
                   </>
+                ) : isDisabled ? (
+                  'Configuration Required'
                 ) : (
                   'Generate Suggestions'
                 )}

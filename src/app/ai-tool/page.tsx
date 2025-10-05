@@ -28,7 +28,7 @@ export default function AiToolPage() {
             AI-Powered Style Suggestions
           </h1>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get instant, expert-level feedback on your web project. Fill in the details below to get started.
+            Get instant, expert-level feedback on your web project powered by Google AI. Fill in the details below to get started.
           </p>
         </div>
       </header>

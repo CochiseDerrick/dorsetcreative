@@ -38,25 +38,25 @@ const jsonLd = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-background">
+    <div className="bg-background w-full overflow-x-hidden">
        <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <header className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter">
+      <header className="py-12 md:py-16 lg:py-24 bg-secondary">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter">
             Contact Us
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Have a project in mind or just want to say hello? We'd love to hear from you.
           </p>
         </div>
       </header>
 
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
+      <section className="py-12 md:py-16 lg:py-24">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>

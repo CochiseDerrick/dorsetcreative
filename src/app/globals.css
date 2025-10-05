@@ -82,7 +82,33 @@ body {
   * {
     @apply border-border;
   }
+  
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
     @apply bg-background text-foreground;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Fix viewport issues on mobile browsers */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      -webkit-overflow-scrolling: touch;
+    }
   }
 }

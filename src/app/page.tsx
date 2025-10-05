@@ -42,9 +42,9 @@ export default function Home() {
   const images = [Love, Iron, Dhamma];
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-1">
-        <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white  overflow-hidden">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+      <main className="flex-1 w-full">
+        <section className="relative w-full min-h-[50vh] h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white overflow-hidden">
           <Image
             src={heroImageUrl}
             alt="Abstract background for hero section"
@@ -54,11 +54,11 @@ export default function Home() {
             data-ai-hint={heroImageHint}
           />
           <div className="absolute inset-0 bg-primary/70" />
-          <div className="relative z-10 p-4 space-y-4 md:space-y-6 max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter">
+          <div className="relative z-10 p-4 space-y-4 md:space-y-6 max-w-4xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter">
               Crafting Digital Excellence
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90">
+            <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90">
               Growth, Creativity, and Connection.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -74,15 +74,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold">Our Services</h2>
-              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
+        <section id="services" className="py-12 md:py-16 lg:py-24 bg-background">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="text-center space-y-4 mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Our Services</h2>
+              <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
                 We provide a comprehensive suite of digital services to help your business thrive online.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {services.slice(0, 3).map((service) => (
                 <Card key={service.id} className="text-center flex flex-col">
                   <CardHeader>
@@ -107,15 +107,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="portfolio" className="py-16 md:py-24 bg-secondary">
-          <div className="container mx-auto px-4">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
-              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
+        <section id="portfolio" className="py-12 md:py-16 lg:py-24 bg-secondary">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="text-center space-y-4 mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Featured Projects</h2>
+              <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
                 A glimpse into our passion for creating beautiful and functional digital experiences.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {featuredProjects.map((project, i) => {
                 return (
                   <Card key={project.id} className="overflow-hidden group">
@@ -154,8 +154,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="ai-tool-promo" className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
+        <section id="ai-tool-promo" className="py-12 md:py-16 lg:py-24 bg-background">
+          <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="space-y-4">
                 <Badge variant="default" className="bg-accent text-accent-foreground">New Tool</Badge>
@@ -176,11 +176,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="testimonials" className="py-16 md:py-24 bg-secondary">
-          <div className="container mx-auto px-4">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl md-text-4xl font-bold">What Our Clients Say</h2>
-              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
+        <section id="testimonials" className="py-12 md:py-16 lg:py-24 bg-secondary">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="text-center space-y-4 mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
+              <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
                 We're proud to have partnered with amazing businesses.
               </p>
             </div>

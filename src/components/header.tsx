@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -23,9 +23,23 @@ const Header = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to restore scrolling when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 flex h-16 items-center justify-between">
+      <div className="container mx-auto px-4 flex h-16 items-center justify-between max-w-7xl">
         <Link href="/" className="flex items-center space-x-2">
           <Logo />
         </Link>
@@ -59,8 +73,8 @@ const Header = () => {
         </Button>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden border-t">
-          <nav className="flex flex-col space-y-2 p-4">
+        <div className="md:hidden border-t bg-background/95 backdrop-blur absolute left-0 right-0 top-full">
+          <nav className="flex flex-col space-y-2 p-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

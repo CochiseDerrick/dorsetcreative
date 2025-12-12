@@ -1,7 +1,7 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import {Mail, Phone, MapPin} from 'lucide-react';
+import {Card, CardContent, CardHeader, CardTitle, CardDescription} from '@/components/ui/card';
 import ContactForm from '@/components/contact-form';
-import type { Metadata } from 'next';
+import type {Metadata} from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact Dorset Creative Ltd',
@@ -39,9 +39,9 @@ const jsonLd = {
 export default function ContactPage() {
   return (
     <div className="bg-background w-full overflow-x-hidden">
-       <script
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
       />
       <header className="py-12 md:py-16 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center max-w-4xl">
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <ContactForm />
             </div>

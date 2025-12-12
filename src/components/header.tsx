@@ -1,22 +1,22 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import {usePathname} from 'next/navigation';
+import {Menu, X} from 'lucide-react';
+import {useState, useEffect} from 'react';
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import {cn} from '@/lib/utils';
+import {Button} from '@/components/ui/button';
 import Logo from '@/components/logo';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/services', label: 'Services' },
-  { href: '/trends', label: 'Trends' },
-  { href: '/ai-tool', label: 'AI Tool' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  {href: '/', label: 'Home'},
+  {href: '/portfolio', label: 'Portfolio'},
+  {href: '/services', label: 'Services'},
+  {href: '/trends', label: 'Trends'},
+  {href: '/ai-tool', label: 'AI Tool'},
+  {href: '/about', label: 'About'},
+  {href: '/contact', label: 'Contact'},
 ];
 
 const Header = () => {
@@ -58,9 +58,9 @@ const Header = () => {
           ))}
         </nav>
         <div className="hidden md:block">
-           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/contact">Get a Quote</Link>
-            </Button>
+          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Link href="/contact">Get a Quote</Link>
+          </Button>
         </div>
         <Button
           variant="ghost"
@@ -90,8 +90,8 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-             <Button asChild className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Get a Quote</Link>
+            <Button asChild className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Get a Quote</Link>
             </Button>
           </nav>
         </div>

@@ -57,7 +57,7 @@ export async function generateStyleSuggestions(
       stylePreferencesLength: validatedFields.data.stylePreferences.length,
     });
     console.log('Using API key:', process.env.GOOGLE_AI_API_KEY ? `${process.env.GOOGLE_AI_API_KEY.substring(0, 10)}...` : 'NOT SET');
-    
+
     const result = await getAiStyleSuggestions(validatedFields.data);
     console.log('AI service returned successfully:', {
       hasResult: !!result,
@@ -67,18 +67,18 @@ export async function generateStyleSuggestions(
     return {success: true, data: result};
   } catch (error) {
     console.error('AI Suggestion Error:', error);
-    
+
     // More detailed error handling
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     const errorStack = error instanceof Error ? error.stack : undefined;
-    
+
     console.error('Error details:', {
       message: errorMessage,
       stack: errorStack,
       type: error?.constructor?.name,
       apiKeyPresent: !!process.env.GOOGLE_AI_API_KEY,
     });
-    
+
     // Return more specific error messages based on error type
     if (errorMessage.includes('API key')) {
       return {
@@ -86,21 +86,21 @@ export async function generateStyleSuggestions(
         error: 'Invalid API key configuration. Please contact support.',
       };
     }
-    
+
     if (errorMessage.includes('quota') || errorMessage.includes('limit')) {
       return {
         success: false,
         error: 'API usage limit reached. Please try again later.',
       };
     }
-    
+
     if (errorMessage.includes('network') || errorMessage.includes('fetch')) {
       return {
         success: false,
         error: 'Network error. Please check your connection and try again.',
       };
     }
-    
+
     return {
       success: false,
       error: `Failed to generate suggestions: ${errorMessage}`,

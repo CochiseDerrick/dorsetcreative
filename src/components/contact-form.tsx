@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
+import {useState} from 'react';
+import {Button} from '@/components/ui/button';
+import {Input} from '@/components/ui/input';
+import {Textarea} from '@/components/ui/textarea';
+import {Card, CardContent, CardHeader, CardTitle, CardDescription} from '@/components/ui/card';
+import {useToast} from '@/hooks/use-toast';
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,10 +15,10 @@ export default function ContactForm() {
     subject: '',
     message: ''
   });
-  const { toast } = useToast();
+  const {toast} = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -28,7 +28,7 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -39,7 +39,7 @@ export default function ContactForm() {
       });
 
       const result = await response.json();
-      
+
       if (result.success) {
         toast({
           title: "Message sent!",
@@ -80,47 +80,47 @@ export default function ContactForm() {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid sm:grid-cols-2 gap-4">
-            <Input 
+            <Input
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              placeholder="Your Name" 
-              aria-label="Your Name" 
-              required 
+              placeholder="Your Name"
+              aria-label="Your Name"
+              required
               minLength={2}
             />
-            <Input 
+            <Input
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              type="email" 
-              placeholder="Your Email" 
-              aria-label="Your Email" 
-              required 
+              type="email"
+              placeholder="Your Email"
+              aria-label="Your Email"
+              required
             />
           </div>
-          <Input 
+          <Input
             name="subject"
             value={formData.subject}
             onChange={handleInputChange}
-            placeholder="Subject" 
-            aria-label="Subject" 
-            required 
+            placeholder="Subject"
+            aria-label="Subject"
+            required
             minLength={5}
           />
-          <Textarea 
+          <Textarea
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            placeholder="Your Message" 
-            className="min-h-[150px]" 
-            aria-label="Your Message" 
-            required 
+            placeholder="Your Message"
+            className="min-h-[150px]"
+            aria-label="Your Message"
+            required
             minLength={20}
           />
-          <Button 
-            type="submit" 
-            size="lg" 
+          <Button
+            type="submit"
+            size="lg"
             className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
             disabled={isSubmitting}
           >

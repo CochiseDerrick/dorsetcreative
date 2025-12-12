@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import {NextRequest, NextResponse} from 'next/server';
 import nodemailer from 'nodemailer';
 
 // Create reusable transporter object using SMTP transport
@@ -28,7 +28,7 @@ export async function GET() {
           hasGmailUser: !!process.env.GMAIL_USER,
           hasGmailPassword: !!process.env.GMAIL_APP_PASSWORD,
         }
-      }, { status: 500 });
+      }, {status: 500});
     }
 
     const transporter = createTransporter();
@@ -75,7 +75,7 @@ Sent at: ${new Date().toLocaleString()}
 
   } catch (error) {
     console.error('❌ Email test failed:', error);
-    
+
     return NextResponse.json({
       success: false,
       error: 'Email test failed',
@@ -83,6 +83,6 @@ Sent at: ${new Date().toLocaleString()}
         name: error.name,
         message: error.message,
       } : 'Unknown error'
-    }, { status: 500 });
+    }, {status: 500});
   }
 }

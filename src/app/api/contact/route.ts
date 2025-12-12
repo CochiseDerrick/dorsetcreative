@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
+import {NextRequest, NextResponse} from 'next/server';
+import {z} from 'zod';
 import nodemailer from 'nodemailer';
 
 const ContactSchema = z.object({
@@ -31,7 +31,7 @@ const createTransporter = () => {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
+
     const validatedFields = ContactSchema.safeParse(body);
 
     if (!validatedFields.success) {
@@ -39,23 +39,23 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         success: false,
         error: `Please fix the following: ${errorMessages}`,
-      }, { status: 400 });
+      }, {status: 400});
     }
 
-    const { name, email, subject, message } = validatedFields.data;
+    const {name, email, subject, message} = validatedFields.data;
 
     // Check if email is configured
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
       console.log('❌ Email not configured. Missing environment variables:', {
         hasGmailUser: !!process.env.GMAIL_USER,
         hasGmailPassword: !!process.env.GMAIL_APP_PASSWORD,
-        submission: { name, email, subject, message },
+        submission: {name, email, subject, message},
         timestamp: new Date().toISOString(),
       });
-      return NextResponse.json({ 
-        success: false, 
-        error: 'Email service not configured' 
-      }, { status: 500 });
+      return NextResponse.json({
+        success: false,
+        error: 'Email service not configured'
+      }, {status: 500});
     }
 
     console.log('📧 Attempting to send email with config:', {
@@ -74,10 +74,10 @@ export async function POST(request: NextRequest) {
       console.log('✅ SMTP connection verified successfully');
     } catch (verifyError) {
       console.error('❌ SMTP connection verification failed:', verifyError);
-      return NextResponse.json({ 
-        success: false, 
-        error: 'Email service connection failed' 
-      }, { status: 500 });
+      return NextResponse.json({
+        success: false,
+        error: 'Email service connection failed'
+      }, {status: 500});
     }
 
     // Send email using Nodemailer
@@ -133,13 +133,13 @@ Sent at: ${new Date().toLocaleString()}
       rejected: emailResult.rejected,
     });
 
-    return NextResponse.json({ 
+    return NextResponse.json({
       success: true,
-      messageId: emailResult.messageId 
+      messageId: emailResult.messageId
     });
   } catch (error) {
     console.error('❌ Contact form submission error:', error);
-    
+
     // Log more details about the error
     if (error instanceof Error) {
       console.error('Error details:', {
@@ -148,10 +148,10 @@ Sent at: ${new Date().toLocaleString()}
         stack: error.stack,
       });
     }
-    
+
     return NextResponse.json({
       success: false,
       error: 'Failed to send message. Please try again later.',
-    }, { status: 500 });
+    }, {status: 500});
   }
 }

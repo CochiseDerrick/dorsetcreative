@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { CheckCircle, Lightbulb, Loader2, ServerCrash, ThumbsUp, XCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import {useState} from 'react';
+import {useForm} from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {z} from 'zod';
+import {CheckCircle, Lightbulb, Loader2, ServerCrash, ThumbsUp, XCircle} from 'lucide-react';
+import {Button} from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -15,12 +15,12 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
-import { generateStyleSuggestions } from '@/lib/actions';
-import type { AiStyleSuggestionsOutput } from '@/ai/flows/ai-style-suggestions';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import {Textarea} from '@/components/ui/textarea';
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
+import {useToast} from '@/hooks/use-toast';
+import {generateStyleSuggestions} from '@/lib/actions';
+import type {AiStyleSuggestionsOutput} from '@/ai/flows/ai-style-suggestions';
+import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert';
 
 const FormSchema = z.object({
   projectDescription: z.string().min(20, {
@@ -35,11 +35,11 @@ interface AiToolFormProps {
   isDisabled?: boolean;
 }
 
-export default function AiToolForm({ isDisabled = false }: AiToolFormProps) {
+export default function AiToolForm({isDisabled = false}: AiToolFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<AiStyleSuggestionsOutput | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const { toast } = useToast();
+  const {toast} = useToast();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -101,7 +101,7 @@ export default function AiToolForm({ isDisabled = false }: AiToolFormProps) {
               <FormField
                 control={form.control}
                 name="projectDescription"
-                render={({ field }) => (
+                render={({field}) => (
                   <FormItem>
                     <FormLabel>Project Description</FormLabel>
                     <FormControl>
@@ -122,7 +122,7 @@ export default function AiToolForm({ isDisabled = false }: AiToolFormProps) {
               <FormField
                 control={form.control}
                 name="stylePreferences"
-                render={({ field }) => (
+                render={({field}) => (
                   <FormItem>
                     <FormLabel>Style Preferences</FormLabel>
                     <FormControl>
@@ -159,16 +159,16 @@ export default function AiToolForm({ isDisabled = false }: AiToolFormProps) {
 
       {isLoading && (
         <div className="flex flex-col items-center justify-center text-center p-8 space-y-4">
-            <Loader2 className="h-12 w-12 animate-spin text-primary" />
-            <p className="text-muted-foreground">Our AI is thinking... this may take a moment.</p>
+          <Loader2 className="h-12 w-12 animate-spin text-primary" />
+          <p className="text-muted-foreground">Our AI is thinking... this may take a moment.</p>
         </div>
       )}
 
       {error && (
         <Alert variant="destructive">
-            <XCircle className="h-4 w-4" />
-            <AlertTitle>Error</AlertTitle>
-            <AlertDescription>{error}</AlertDescription>
+          <XCircle className="h-4 w-4" />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
 
@@ -179,21 +179,21 @@ export default function AiToolForm({ isDisabled = false }: AiToolFormProps) {
           </CardHeader>
           <CardContent className="space-y-6">
             {result.adherenceToHighStandards ? (
-                <Alert>
-                    <ThumbsUp className="h-4 w-4" />
-                    <AlertTitle>High Standards Met!</AlertTitle>
-                    <AlertDescription>
-                        {result.justification}
-                    </AlertDescription>
-                </Alert>
+              <Alert>
+                <ThumbsUp className="h-4 w-4" />
+                <AlertTitle>High Standards Met!</AlertTitle>
+                <AlertDescription>
+                  {result.justification}
+                </AlertDescription>
+              </Alert>
             ) : (
               <div className="space-y-4">
-                 <Alert>
-                    <Lightbulb className="h-4 w-4" />
-                    <AlertTitle>Suggestions for Improvement</AlertTitle>
-                    <AlertDescription>
-                        {result.justification}
-                    </AlertDescription>
+                <Alert>
+                  <Lightbulb className="h-4 w-4" />
+                  <AlertTitle>Suggestions for Improvement</AlertTitle>
+                  <AlertDescription>
+                    {result.justification}
+                  </AlertDescription>
                 </Alert>
                 <ul className="space-y-3 list-none p-0">
                   {result.suggestions.map((suggestion, index) => (

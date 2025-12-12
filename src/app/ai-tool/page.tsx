@@ -1,7 +1,7 @@
 import {Palette, AlertCircle} from 'lucide-react';
 import type {Metadata} from 'next';
 import AiToolForm from './ai-tool-form';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert';
 
 export const metadata: Metadata = {
   title: 'AI Style Suggestions Tool',

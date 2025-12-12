@@ -6,22 +6,52 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { services } from '@/lib/data';
-import { Check, Code, PenTool, Search } from 'lucide-react';
-import type { Metadata } from 'next';
+import {Button} from '@/components/ui/button';
+import {services} from '@/lib/data';
+import {Check, Code, PenTool, Search} from 'lucide-react';
+import type {Metadata} from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Our Services',
-  description: 'Explore our services: Web Design, App Development, and SEO Optimization, offered by our expert team at Dorset Creative Ltd in England.',
+  title: 'Services | Web Design, App Development & SEO | Dorset Creative Ltd',
+  description: 'Discover our full range of digital services: bespoke web design, mobile app development, and advanced SEO strategies. Dorset Creative Ltd helps your business grow online with expert solutions tailored to your needs.',
   openGraph: {
-    title: 'Services | Dorset Creative Ltd',
-    description: 'Explore our services: Web Design, App Development, and SEO Optimization.',
+    title: 'Services | Web Design, App Development & SEO | Dorset Creative Ltd',
+    description: 'Discover our full range of digital services: bespoke web design, mobile app development, and advanced SEO strategies. Dorset Creative Ltd helps your business grow online with expert solutions tailored to your needs.',
+    url: 'https://dorsetcreative.online/services',
+    images: [
+      {
+        url: 'https://dorsetcreative.online/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Dorset Creative Ltd Services',
+      },
+    ],
+    type: 'website',
+    siteName: 'Dorset Creative Ltd',
+    locale: 'en_GB',
   },
   twitter: {
-    title: 'Services | Dorset Creative Ltd',
-    description: 'Explore our services: Web Design, App Development, and SEO Optimization.',
+    card: 'summary_large_image',
+    title: 'Services | Web Design, App Development & SEO | Dorset Creative Ltd',
+    description: 'Discover our full range of digital services: bespoke web design, mobile app development, and advanced SEO strategies. Dorset Creative Ltd helps your business grow online with expert solutions tailored to your needs.',
+    images: ['https://dorsetcreative.online/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  keywords: [
+    'web design dorset',
+    'app development poole',
+    'seo services',
+    'digital agency dorset',
+    'mobile app development',
+    'SEO optimization',
+    'UK web agency',
+  ],
+  alternates: {
+    canonical: 'https://dorsetcreative.online/services',
   },
 };
 
@@ -44,11 +74,11 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <section key={service.id} id={service.id} className="scroll-mt-20">
               <div className="text-center mb-12">
-                 <div className="mx-auto bg-primary text-primary-foreground p-4 rounded-full w-fit mb-4">
-                    {service.id === 'web-design' && <PenTool size={32} />}
-                    {service.id === 'app-dev' && <Code size={32} />}
-                    {service.id === 'seo' && <Search size={32} />}
-                 </div>
+                <div className="mx-auto bg-primary text-primary-foreground p-4 rounded-full w-fit mb-4">
+                  {service.id === 'web-design' && <PenTool size={32} />}
+                  {service.id === 'app-dev' && <Code size={32} />}
+                  {service.id === 'seo' && <Search size={32} />}
+                </div>
                 <h2 className="text-3xl md:text-4xl font-bold">{service.title}</h2>
                 <p className="mt-2 text-muted-foreground md:text-lg max-w-2xl mx-auto">{service.longDescription}</p>
               </div>
@@ -82,6 +112,13 @@ export default function ServicesPage() {
           ))}
         </div>
       </main>
+      {/* Related Content Section */}
+      <section className="py-12 bg-muted">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold mb-4">See Our Work</h2>
+          <p className="mb-6 text-muted-foreground">Check out our <a href="/portfolio" className="text-primary underline hover:no-underline">portfolio</a> or <a href="/contact" className="text-primary underline hover:no-underline">get in touch</a> for a free consultation.</p>
+        </div>
+      </section>
     </div>
   );
 }
